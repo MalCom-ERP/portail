@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MalCom — Logiciel de Gestion Commerciale, Caisse & Stocks Multi-Boutiques</title>
+  <meta name="description" content="MalCom : Le logiciel professionnel pour boutiques, magasins et quincailleries en Afrique de l'Ouest. Pilotez vos ventes, stocks, caisses et credits meme sans connexion Internet.">
+  <link rel="icon" type="image/x-icon" href="assets/img/icon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta property="og:title" content="MalCom — Gestion Commerciale & Caisse">
+  <meta property="og:description" content="Securisez vos caisses, controlez vos stocks en temps reel et pilotez plusieurs boutiques. 100% hors-ligne.">
+  <meta property="og:image" content="assets/img/accueil.png">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+  <!-- ═══ TOPBAR ═══ -->
+  <div class="topbar">
+    Version 4.4 Pro &mdash; Installation sur site & formation offerte &mdash;
+    <a href="tel:+22382200766">+223 82 20 07 66</a>
+  </div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/img/app-icon.png" alt="MalCom">
+        <span class="nav-logo-text">MalCom<span class="nav-pro">PRO</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link active">Accueil</a>
+        <a href="#modules" class="nav-link">Modules</a>
+        <a href="#avantages" class="nav-link">Avantages</a>
+        <a href="#simulateur" class="nav-link">Simulateur</a>
+        <a href="#tarifs" class="nav-link">Tarifs</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20je%20souhaite%20une%20demonstration%20de%20MalCom" target="_blank" class="btn btn-wa btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#contact" class="btn btn-accent btn-sm js-open-install">Installer MalCom</a>
+        <button class="mobile-toggle" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero" id="hero">
+    <!-- Aurora background blobs -->
+    <div class="hero-aurora">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-pill reveal">
+        <span class="hero-pill-dot"></span>
+        Disponible maintenant &mdash; v4.4 Pro
+      </div>
+
+      <h1 class="reveal reveal-delay-1 typewriter-h1">
+        <span class="tw-line" data-text="Controlez chaque centime."></span><br>
+        <span class="tw-line gradient-text" data-text="Liberez-vous de votre boutique."></span>
+        <span class="tw-cursor">|</span>
+      </h1>
+
+      <p class="hero-sub reveal reveal-delay-2">
+        MalCom verrouille vos caisses, trace votre stock au gramme pres et pilote
+        vos boutiques a distance. Fonctionne a 100% sans Internet.
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#contact" class="btn btn-accent btn-lg js-open-install">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Demander une installation
+        </a>
+        <a href="tel:+22382200766" class="btn btn-glass btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.8.36 1.58.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c1.23.34 2.01.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +223 82 20 07 66
+        </a>
+        <button class="btn btn-glass btn-lg js-open-demo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Demo gratuite
+        </button>
+      </div>
+
+      <div class="hero-meta reveal reveal-delay-4">
+        <div class="hero-meta-item"><span class="check-circle"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Installation en 30 min</div>
+        <div class="hero-meta-item"><span class="check-circle"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Formation offerte</div>
+        <div class="hero-meta-item"><span class="check-circle"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Imprimantes 58 / 80mm et A4</div>
+      </div>
+
+      <!-- 3D Screenshot -->
+      <div class="hero-screen-wrap reveal">
+        <div class="hero-screen" id="hero-tilt">
+          <div class="screen-chrome">
+            <span class="dot dot-r"></span>
+            <span class="dot dot-y"></span>
+            <span class="dot dot-g"></span>
+            <span class="screen-title">MalCom Desktop Pro</span>
+          </div>
+          <div class="screen-body">
+            <img src="assets/img/accueil.png" alt="MalCom - Tableau de bord" class="js-zoomable">
+            <div class="screen-gradient"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MARQUEE TICKER ═══ -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="marquee-dot"></span>Caisse enregistreuse</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Gestion de stock</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Multi-boutiques</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Credits clients</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Facturation UEMOA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>100% Hors-ligne</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Imprimante thermique</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Comptabilite SYSCOHADA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Journal d'audit</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Codes-barres</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item"><span class="marquee-dot"></span>Caisse enregistreuse</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Gestion de stock</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Multi-boutiques</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Credits clients</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Facturation UEMOA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>100% Hors-ligne</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Imprimante thermique</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Comptabilite SYSCOHADA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Journal d'audit</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Codes-barres</span>
+    </div>
+  </div>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats">
+    <div class="section-aurora aurora-stats"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-box reveal">
+          <div class="stat-val" data-count="150">+150</div>
+          <div class="stat-label">Commerces equipes</div>
+          <div class="stat-sub">Quincailleries, superettes, grossistes</div>
+        </div>
+        <div class="stat-box reveal reveal-delay-1">
+          <div class="stat-val">100%</div>
+          <div class="stat-label">Fonctionnel sans Internet</div>
+          <div class="stat-sub">Aucune panne reseau</div>
+        </div>
+        <div class="stat-box reveal reveal-delay-2">
+          <div class="stat-val">0 CFA</div>
+          <div class="stat-label">Ecart de caisse</div>
+          <div class="stat-sub">Chaque centime trace</div>
+        </div>
+        <div class="stat-box reveal reveal-delay-3">
+          <div class="stat-val">30 min</div>
+          <div class="stat-label">Installation complete</div>
+          <div class="stat-sub">Operationnel le jour meme</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ AVANT / APRES ═══ -->
+  <section class="section section-divider" id="avantages">
+    <div class="section-aurora aurora-compare"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Avant / Apres</div>
+        <h2 class="section-title">Pourquoi les commercants abandonnent les cahiers</h2>
+        <p class="section-desc">Gerer une boutique avec des feuilles volantes fait perdre des centaines de milliers de FCFA chaque mois en vols, erreurs et credits non reclames.</p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card compare-bad reveal">
+          <div class="compare-head">
+            <div class="compare-icon compare-icon-bad"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <h3 class="compare-title">Sans MalCom</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span><strong>Vols et disparitions d'articles</strong> &mdash; Impossibilite de connaitre le stock reel sans comptage manuel.</span></li>
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span><strong>Credits clients oublies</strong> &mdash; Carnets egares, clients qui contestent les montants.</span></li>
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span><strong>Erreurs de calcul en caisse</strong> &mdash; Mauvais rendu de monnaie aux heures de pointe.</span></li>
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg><span><strong>Patron prisonnier</strong> &mdash; Oblige d'etre present du matin au soir pour surveiller.</span></li>
+          </ul>
+        </div>
+
+        <div class="compare-card compare-good reveal reveal-delay-1">
+          <div class="compare-head">
+            <div class="compare-icon compare-icon-good"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h3 class="compare-title">Avec MalCom</h3>
+          </div>
+          <ul class="compare-list">
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Stock verrouille au centime</strong> &mdash; Destockage automatique, alertes stock critique.</span></li>
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Suivi rigoureux des credits</strong> &mdash; Recus d'acompte infalsifiables (Especes, Wave, OM).</span></li>
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Ventes express en 3 secondes</strong> &mdash; Saisie clavier ou douchette, ticket automatique.</span></li>
+            <li class="compare-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Liberte du dirigeant</strong> &mdash; Suivi du CA de plusieurs boutiques a distance.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MODULES TABS ═══ -->
+  <section class="section section-divider" id="modules">
+    <div class="section-aurora aurora-modules"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Apercu du logiciel</div>
+        <h2 class="section-title">Decouvrez MalCom en action</h2>
+        <p class="section-desc">Captures reelles du systeme. Cliquez sur une image pour l'agrandir.</p>
+      </div>
+
+      <div class="tabs-nav reveal">
+        <button class="tab-btn active" data-tab="tab-pos"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/></svg> Caisse POS</button>
+        <button class="tab-btn" data-tab="tab-stock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Stocks</button>
+        <button class="tab-btn" data-tab="tab-multi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Multi-Boutiques</button>
+        <button class="tab-btn" data-tab="tab-credit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Credits</button>
+        <button class="tab-btn" data-tab="tab-depense"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Depenses</button>
+        <button class="tab-btn" data-tab="tab-facture"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Factures</button>
+      </div>
+
+      <!-- Tab: POS -->
+      <div class="tab-pane active" id="tab-pos">
+        <div class="mod-card">
+          <div class="mod-text">
+            <span class="mod-tag">Encaissement haute vitesse</span>
+            <h3 class="mod-h3">Poste de vente et caisse express</h3>
+            <p class="mod-p">Enregistrez vos ventes a la vitesse de l'eclair. Basculez entre prix Detail et Gros, scannez ou tapez au clavier.</p>
+            <ul class="mod-checks">
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Double tarification Detail / Grossiste</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Recherche par reference, nom ou code-barres</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Impression ticket thermique 58/80mm</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent js-open-install">Equiper ma caisse</a>
+          </div>
+          <div class="mod-img"><img src="assets/img/vente1.png" alt="MalCom POS" class="js-zoomable"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Stock -->
+      <div class="tab-pane" id="tab-stock">
+        <div class="mod-card">
+          <div class="mod-text">
+            <span class="mod-tag">Controle des marchandises</span>
+            <h3 class="mod-h3">Gestion de stock et alertes de seuil</h3>
+            <p class="mod-p">Visualisez la valorisation exacte de votre stock en Francs CFA. Alertes automatiques en cas de rupture.</p>
+            <ul class="mod-checks">
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Valorisation totale du stock</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Indicateurs de sante du stock</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Import / Export Excel et CSV</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent js-open-install">Securiser mes stocks</a>
+          </div>
+          <div class="mod-img"><img src="assets/img/stock.png" alt="MalCom Stock" class="js-zoomable"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Multi -->
+      <div class="tab-pane" id="tab-multi">
+        <div class="mod-card">
+          <div class="mod-text">
+            <span class="mod-tag">Reseau centralise</span>
+            <h3 class="mod-h3">Pilotage multi-boutiques et depots</h3>
+            <p class="mod-p">Centralisez le chiffre d'affaires du reseau, controlez les gerants et effectuez des transferts de marchandises.</p>
+            <ul class="mod-checks">
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> CA total reseau et par boutique</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Transferts inter-boutiques</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Basculement filiale en un clic</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent js-open-install">Piloter mes boutiques</a>
+          </div>
+          <div class="mod-img"><img src="assets/img/mesboutiques.png" alt="MalCom Multi-Boutiques" class="js-zoomable"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Credit -->
+      <div class="tab-pane" id="tab-credit">
+        <div class="mod-card">
+          <div class="mod-text">
+            <span class="mod-tag">Securisation tresorerie</span>
+            <h3 class="mod-h3">Suivi des credits et reglements</h3>
+            <p class="mod-p">Enregistrez les ventes a credit, les acomptes par Especes ou Mobile Money, et le reste a payer.</p>
+            <ul class="mod-checks">
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Fiche client avec solde debiteur</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Especes, Orange Money, Wave, Moov</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Recu de versement officiel</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent js-open-install">Recuperer mes creances</a>
+          </div>
+          <div class="mod-img"><img src="assets/img/credit.png" alt="MalCom Credits" class="js-zoomable"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Depenses -->
+      <div class="tab-pane" id="tab-depense">
+        <div class="mod-card">
+          <div class="mod-text">
+            <span class="mod-tag">Rentabilite et comptabilite</span>
+            <h3 class="mod-h3">Depenses et benefice net</h3>
+            <p class="mod-p">Enregistrez vos charges et deduisez automatiquement votre benefice net reel.</p>
+            <ul class="mod-checks">
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Graphiques d'evolution mensuelle</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Rapports journaliers de caisse</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Module SYSCOHADA complet</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent js-open-install">Optimiser ma rentabilite</a>
+          </div>
+          <div class="mod-img"><img src="assets/img/depense.png" alt="MalCom Depenses" class="js-zoomable"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Factures -->
+      <div class="tab-pane" id="tab-facture">
+        <div class="mod-card">
+          <div class="mod-text">
+            <span class="mod-tag">Documents officiels</span>
+            <h3 class="mod-h3">Facturation normalisee UEMOA</h3>
+            <p class="mod-p">Editez des factures conformes avec vos coordonnees, NIF/RCCM et remises.</p>
+            <ul class="mod-checks">
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Factures Pro-forma et Definitives</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Impression PDF et A4</li>
+              <li class="mod-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> TVA et conditions configurables</li>
+            </ul>
+            <a href="#contact" class="btn btn-accent js-open-install">Professionnaliser mes factures</a>
+          </div>
+          <div class="mod-img"><img src="assets/img/facture.png" alt="MalCom Factures" class="js-zoomable"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BENTO FEATURES ═══ -->
+  <section class="section section-divider">
+    <div class="section-aurora aurora-bento"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Fonctionnalites avancees</div>
+        <h2 class="section-title">Securite anti-fraude et outils du dirigeant</h2>
+      </div>
+
+      <div class="bento reveal">
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h4 class="bento-title">Roles utilisateurs</h4>
+          <p class="bento-desc">Acces separes pour caissiers, vendeurs, gestionnaires et comptables. Les vendeurs ne voient jamais vos prix d'achat.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h4 class="bento-title">Recherche Spotlight</h4>
+          <p class="bento-desc">Recherche instantanee : # pour un produit, @ pour un client, ! pour retrouver une facture.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h4 class="bento-title">Journal d'audit</h4>
+          <p class="bento-desc">Chaque suppression, remise ou modification est tracee avec la date, l'heure et l'operateur.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h4 class="bento-title">Sauvegarde auto</h4>
+          <p class="bento-desc">Sauvegardez sur cle USB ou dans le Cloud en un clic. Protege meme en cas de panne.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/></svg></div>
+          <h4 class="bento-title">Zero dependance Internet</h4>
+          <p class="bento-desc">Coupure de fibre ? Votre magasin continue de vendre, imprimer et gerer les stocks.</p>
+        </div>
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4 class="bento-title">Support reactif</h4>
+          <p class="bento-desc">Assistance locale a Bamako 6j/7 par telephone et WhatsApp avec intervention sur site.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HARDWARE ═══ -->
+  <section class="section section-divider" id="materiel">
+    <div class="section-aurora aurora-hw"><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Compatibilite</div>
+        <h2 class="section-title">Fonctionne avec votre materiel existant</h2>
+      </div>
+
+      <div class="hw-grid reveal">
+        <div class="hw-card"><div class="hw-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg></div><div class="hw-name">Imprimantes Tickets</div><div class="hw-detail">Thermique 58mm et 80mm</div></div>
+        <div class="hw-card"><div class="hw-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="hw-name">Imprimantes A4</div><div class="hw-detail">Canon, HP, Epson</div></div>
+        <div class="hw-card"><div class="hw-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><div class="hw-name">Douchettes</div><div class="hw-detail">1D et QR Code</div></div>
+        <div class="hw-card"><div class="hw-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="14" x2="6.01" y2="14"/></svg></div><div class="hw-name">Tiroirs-Caisses</div><div class="hw-detail">Ouverture auto RJ11</div></div>
+        <div class="hw-card"><div class="hw-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="hw-name">Windows et Mac</div><div class="hw-detail">PC, portables, All-in-One</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CALCULATOR ═══ -->
+  <section class="section section-divider" id="simulateur">
+    <div class="section-aurora aurora-calc"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Calculateur de rentabilite</div>
+        <h2 class="section-title">Estimez vos gains avec MalCom</h2>
+        <p class="section-desc">Selectionnez votre type de commerce et volume de ventes pour mesurer le retour sur investissement.</p>
+      </div>
+
+      <div class="calc-box reveal">
+        <div class="calc-grid">
+          <div class="calc-left">
+            <div class="calc-group">
+              <label class="calc-label" for="calc-type">Domaine d'activite :</label>
+              <select id="calc-type" class="calc-select">
+                <option value="quincaillerie" selected>Quincaillerie et Materiaux</option>
+                <option value="alimentation">Superette et Alimentation</option>
+                <option value="boutique_mode">Pret-a-porter et Chaussures</option>
+                <option value="grossiste">Commerce de Gros</option>
+                <option value="pieces_auto">Pieces detachees Auto / Moto</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <label class="calc-label" for="calc-sales">Nombre de ventes par jour :</label>
+              <input type="range" id="calc-sales" class="calc-range" min="10" max="250" step="5" value="45">
+              <div class="range-info">
+                <span>10 ventes</span>
+                <strong id="calc-sales-val" style="color: var(--accent-3);">45 ventes / jour</strong>
+                <span>250+ ventes</span>
+              </div>
+            </div>
+            <div class="calc-note">Calcul base sur les retours reels constates aupres de nos commercants equipes.</div>
+          </div>
+
+          <div class="calc-right">
+            <div>
+              <div class="calc-res-tag">Pertes evitees par mois</div>
+              <div class="calc-res-big" id="res-rev">1 653 750 FCFA</div>
+              <div class="calc-res-sub">Argent protege chaque mois contre les erreurs et disparitions</div>
+            </div>
+            <div class="calc-rows">
+              <div class="calc-row"><span>Temps gagne :</span><span id="res-hours">16 h / sem.</span></div>
+              <div class="calc-row"><span>Fiabilite caisse :</span><span id="res-errors">99.8%</span></div>
+              <div class="calc-row"><span>Economie sur 1 an :</span><span id="res-annual" style="color: var(--green);">19 845 000 FCFA</span></div>
+            </div>
+            <div style="margin-top: 24px;"><a href="#contact" class="btn btn-accent js-open-install" style="width: 100%;">Planifier mon installation</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section class="section section-divider" id="tarifs">
+    <div class="section-aurora aurora-pricing"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Offres</div>
+        <h2 class="section-title">Formules transparentes, cle en main</h2>
+        <p class="section-desc">Chaque formule comprend l'installation, la configuration materielle et la formation de vos equipes.</p>
+      </div>
+
+      <div class="price-grid">
+        <div class="price-card reveal">
+          <h3 class="price-tier">Mono-Boutique</h3>
+          <p class="price-tagline">Ideal pour demarrer avec 1 point de vente.</p>
+          <div class="price-amount-box"><span class="price-amount">Cle en main</span><span class="price-period">Licence definitive + Installation</span></div>
+          <div class="price-included">Deplacement et installation sur site inclus</div>
+          <ul class="price-features">
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 1 Boutique complete</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Poste de Caisse POS</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Stocks et alertes</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Credits clients</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Config imprimante</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Formation 2 caissiers</li>
+          </ul>
+          <a href="#contact" class="btn btn-glass js-open-install" style="width: 100%;">Demander un devis</a>
+        </div>
+
+        <div class="price-card price-popular reveal reveal-delay-1">
+          <span class="price-badge">Le plus demande</span>
+          <h3 class="price-tier">Multi-Boutiques Pro</h3>
+          <p class="price-tagline">Pour les commercants avec 2 a 5 boutiques.</p>
+          <div class="price-amount-box"><span class="price-amount">Reseau connecte</span><span class="price-period">Centralisation et controle patron</span></div>
+          <div class="price-included">Installation multi-sites + Synchro</div>
+          <ul class="price-features">
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <strong>2 a 5 boutiques en reseau</strong></li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Transferts de stock</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Controle a distance du CA</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Roles Gerants / Caissiers</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Facturation avec logo</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Support prioritaire WhatsApp</li>
+          </ul>
+          <a href="#contact" class="btn btn-accent js-open-install" style="width: 100%;">Commander l'offre reseau</a>
+        </div>
+
+        <div class="price-card reveal reveal-delay-2">
+          <h3 class="price-tier">Grossiste / Grand Compte</h3>
+          <p class="price-tagline">Pour les distributeurs et chaines commerciales.</p>
+          <div class="price-amount-box"><span class="price-amount">Sur mesure</span><span class="price-period">Comptabilite SYSCOHADA complete</span></div>
+          <div class="price-included">Audit initial et accompagnement</div>
+          <ul class="price-features">
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Boutiques illimitees</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SYSCOHADA complet</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Import massif de references</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Formats factures speciaux</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sauvegardes serveur dedie</li>
+            <li class="price-feat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Maintenance 7j/7</li>
+          </ul>
+          <a href="#contact" class="btn btn-glass js-open-install" style="width: 100%;">Devis entreprise</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="section section-divider">
+    <div class="section-aurora aurora-testi"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Temoignages</div>
+        <h2 class="section-title">Ils ont installe MalCom</h2>
+      </div>
+
+      <div class="test-grid">
+        <div class="test-card reveal">
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-text">&laquo;Avant MalCom, j'avais constamment des ecarts entre les ventes notees et l'argent reel en caisse. Depuis que le logiciel est installe, chaque article est facture. J'ai recupere ma tranquillite.&raquo;</p>
+          <div class="test-author"><div class="test-avatar">MD</div><div class="test-info"><h5>Mamadou Diallo</h5><p>Quincaillerie, Bamako</p></div></div>
+        </div>
+        <div class="test-card reveal reveal-delay-1">
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-text">&laquo;Le fait que le systeme fonctionne sans Internet a fait toute la difference. Meme pendant les coupures, la caisse continue d'imprimer les tickets sans aucun bug.&raquo;</p>
+          <div class="test-author"><div class="test-avatar">OT</div><div class="test-info"><h5>Ousmane Traore</h5><p>Superette, Missira</p></div></div>
+        </div>
+        <div class="test-card reveal reveal-delay-2">
+          <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="test-text">&laquo;J'ai deux points de vente et je ne savais jamais quel magasin avait du stock. Aujourd'hui, je vois tout en meme temps et les transferts se font proprement.&raquo;</p>
+          <div class="test-author"><div class="test-avatar">BK</div><div class="test-info"><h5>Boubacar Keita</h5><p>Pieces Auto, Hamdallaye</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section section-divider" id="faq">
+    <div class="section-aurora aurora-faq"><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-tag">Questions frequentes</div>
+        <h2 class="section-title">Tout savoir avant d'installer MalCom</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item active">
+          <button class="faq-q"><span>MalCom fonctionne-t-il reellement sans connexion Internet ?</span><span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a" style="max-height:120px;"><p><strong>Oui, a 100%.</strong> Vos donnees sont hebergees directement sur votre ordinateur. En mode multi-boutiques, la synchronisation se fait des que la connexion est retablie.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Comment se deroule l'installation ?</span><span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a"><p>Un technicien AMD-Service se deplace dans votre commerce. Nous installons le logiciel, configurons imprimante et douchette, puis formons vos caissiers. En moins de 45 minutes, c'est operationnel.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Mes vendeurs peuvent-ils modifier les prix ou voler ?</span><span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a"><p><strong>Non.</strong> Les vendeurs ne peuvent ni modifier les prix d'achat, ni voir votre marge, ni supprimer une vente. Chaque action est tracee dans le journal de securite.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Puis-je importer mes produits existants ?</span><span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a"><p>Oui. Si vous possedez une liste Excel, notre equipe importe l'integralite de votre catalogue lors de l'installation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Comment contacter le support technique ?</span><span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a"><p>Notre equipe est joignable par telephone et WhatsApp au <strong>+223 82 20 07 66</strong>. En cas de blocage, nous intervenons a distance ou sur place.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA + FORM ═══ -->
+  <section class="cta-section section-divider" id="contact">
+    <div class="section-aurora aurora-cta"><div class="s-blob"></div><div class="s-blob"></div></div>
+    <div class="container">
+      <div class="cta-box reveal">
+        <div>
+          <div class="section-tag" style="margin-bottom:16px;">Pret a demarrer</div>
+          <h2 class="cta-h2">Modernisez la gestion de votre boutique</h2>
+          <p class="cta-sub">Ne laissez plus les erreurs manuelles grignoter votre benefice. Contactez-nous pour planifier l'installation.</p>
+          <div class="cta-contacts">
+            <div class="cta-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg> Telephone : <a href="tel:+22382200766">+223 82 20 07 66</a></div>
+            <div class="cta-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--wa)"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg> WhatsApp : <a href="https://wa.me/22382200766" target="_blank">Discuter avec AMD-Service</a></div>
+            <div class="cta-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bamako, Mali &mdash; Zone UEMOA</div>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>Demander une installation</h3>
+          <p class="form-sub">Remplissez pour etre rappele sous 15 minutes.</p>
+          <form class="js-quick-install-form">
+            <div class="form-group"><label class="form-label">Nom complet</label><input type="text" name="client_name" class="form-input" placeholder="Ex: Oumar Diallo" required></div>
+            <div class="form-group"><label class="form-label">Telephone WhatsApp</label><input type="tel" name="client_phone" class="form-input" placeholder="Ex: +223 76 00 00 00" required></div>
+            <div class="form-group"><label class="form-label">Type de commerce</label><select name="shop_type" class="form-select"><option>Quincaillerie</option><option>Superette / Alimentation</option><option>Vetements et Chaussures</option><option>Commerce de Gros</option><option>Pieces detachees</option><option>Autre commerce</option></select></div>
+            <div class="form-group"><label class="form-label">Ville / Quartier</label><input type="text" name="client_city" class="form-input" placeholder="Ex: Bamako, Hamdallaye" required></div>
+            <button type="submit" class="btn btn-accent" style="width:100%;margin-top:10px;">Envoyer via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#" class="nav-logo"><img src="assets/img/app-icon.png" alt="MalCom" style="width:28px;height:28px;border-radius:7px;"><span class="nav-logo-text">MalCom</span></a>
+          <p>Solution logicielle de gestion commerciale, caisse et stocks multi-boutiques pour les commerces africains.</p>
+        </div>
+        <div><h4 class="footer-col-title">Navigation</h4><ul class="footer-links"><li><a href="#hero">Accueil</a></li><li><a href="#modules">Modules</a></li><li><a href="#avantages">Avantages</a></li><li><a href="#tarifs">Offres</a></li></ul></div>
+        <div><h4 class="footer-col-title">Fonctionnalites</h4><ul class="footer-links"><li><a href="#modules">Caisse POS</a></li><li><a href="#modules">Gestion de Stock</a></li><li><a href="#modules">Multi-Boutiques</a></li><li><a href="#modules">Credits et Dettes</a></li></ul></div>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Concu par AMD-Service</span></div>
+          <div class="footer-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg><span>+223 82 20 07 66</span></div>
+          <div class="footer-contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Bamako, Mali</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>MalCom</strong> &mdash; Tous droits reserves. <a href="https://wa.me/22382200766" target="_blank">AMD-Service</a></div>
+        <div>Zone UEMOA (FCFA)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ FLOATING ═══ -->
+  <div class="float-bar">
+    <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20je%20souhaite%20des%20informations%20sur%20MalCom" target="_blank" class="fab fab-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+      WhatsApp
+    </a>
+    <a href="tel:+22382200766" class="fab fab-call">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
+      Appeler
+    </a>
+  </div>
+
+  <!-- ═══ MODAL: INSTALL ═══ -->
+  <div class="modal-overlay" id="modal-install">
+    <div class="modal-card">
+      <div class="modal-head"><h3><img src="assets/img/app-icon.png" alt="" style="width:20px;height:20px;border-radius:5px;"> Installation MalCom</h3><button class="modal-close js-close-modal">&times;</button></div>
+      <div class="modal-body">
+        <p style="font-size:14px;color:var(--text-3);margin-bottom:20px;">Un conseiller AMD-Service va planifier l'installation de MalCom dans votre commerce.</p>
+        <form class="js-quick-install-form">
+          <div class="form-group"><label class="calc-label">Nom et Prenom</label><input type="text" name="client_name" class="calc-select" placeholder="Ex: Amadou Diallo" required></div>
+          <div class="form-group"><label class="calc-label">Numero WhatsApp</label><input type="tel" name="client_phone" class="calc-select" placeholder="Ex: +223 82 20 07 66" required></div>
+          <div class="form-group"><label class="calc-label">Type de Commerce</label><select name="shop_type" class="calc-select"><option>Quincaillerie</option><option>Superette</option><option>Vetements</option><option>Commerce de Gros</option><option>Pieces detachees</option></select></div>
+          <div class="form-group"><label class="calc-label">Ville / Quartier</label><input type="text" name="client_city" class="calc-select" placeholder="Ex: Bamako, Kalaban Coura" required></div>
+          <div style="display:flex;gap:12px;margin-top:20px;"><button type="submit" class="btn btn-wa" style="flex:1;">Envoyer par WhatsApp</button><a href="tel:+22382200766" class="btn btn-accent" style="flex:1;">Appeler</a></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: DEMO ═══ -->
+  <div class="modal-overlay" id="modal-demo">
+    <div class="modal-card">
+      <div class="modal-head"><h3><img src="assets/img/app-icon.png" alt="" style="width:20px;height:20px;border-radius:5px;"> Telecharger MalCom Demo</h3><button class="modal-close js-close-modal">&times;</button></div>
+      <div class="modal-body">
+        <p style="font-size:14px;color:var(--text-3);margin-bottom:20px;">Version d'essai gratuite avec donnees d'exemple.</p>
+        <a href="https://wa.me/22382200766?text=Bonjour,%20je%20souhaite%20le%20lien%20Windows%20pour%20la%20demo%20MalCom" target="_blank" class="dl-card">
+          <div class="dl-info"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-1)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div><h4>MalCom pour Windows</h4><p>Installateur .exe 64-bit</p></div></div>
+          <span class="btn btn-accent btn-sm">Telecharger</span>
+        </a>
+        <a href="https://wa.me/22382200766?text=Bonjour,%20je%20souhaite%20le%20lien%20Mac%20pour%20la%20demo%20MalCom" target="_blank" class="dl-card">
+          <div class="dl-info"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text-1)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div><h4>MalCom pour macOS</h4><p>Package .dmg Intel + Apple Silicon</p></div></div>
+          <span class="btn btn-glass btn-sm">Telecharger</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ LIGHTBOX ═══ -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-x" id="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Capture MalCom">
+      <div class="lightbox-cap" id="lightbox-cap"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
