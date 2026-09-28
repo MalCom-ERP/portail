@@ -95,8 +95,38 @@
         <div class="hero-meta-item"><span class="check-circle"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span> Imprimantes 58 / 80mm et A4</div>
       </div>
 
-      <!-- 3D Screenshot -->
+      <!-- 3D Screenshot with Motion Badges -->
       <div class="hero-screen-wrap reveal">
+        <!-- Floating Motion Design Badge Left: Vente Express -->
+        <div class="hero-motion-float hm-left js-zoomable" data-title="Caisse POS Haute Vitesse" title="Cliquer pour agrandir la vue 3D">
+          <div class="hm-inner">
+            <div class="hm-thumb-wrap">
+              <img src="assets/img/motion-pos.jpg" alt="Caisse POS Motion 3D" class="hm-thumb">
+              <div class="hm-glow-fx"></div>
+            </div>
+            <div class="hm-info">
+              <div class="hm-pill"><span class="hm-pulse-dot"></span> Vente Express</div>
+              <div class="hm-stat">&lt; 3s / client</div>
+              <div class="hm-desc">Ticket thermique instantan&eacute;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Motion Design Badge Right: Coffre-fort Hors-Ligne -->
+        <div class="hero-motion-float hm-right js-zoomable" data-title="Coffre-Fort & Sécurité Locale" title="Cliquer pour agrandir la vue 3D">
+          <div class="hm-inner">
+            <div class="hm-thumb-wrap">
+              <img src="assets/img/motion-security.jpg" alt="S&eacute;curit&eacute; Coffre-fort 3D" class="hm-thumb">
+              <div class="hm-glow-fx"></div>
+            </div>
+            <div class="hm-info">
+              <div class="hm-pill hm-pill-green"><span class="hm-pulse-dot green"></span> 100% Hors-Ligne</div>
+              <div class="hm-stat">Coffre-fort local</div>
+              <div class="hm-desc">Audit &amp; z&eacute;ro fuite</div>
+            </div>
+          </div>
+        </div>
+
         <div class="hero-screen" id="hero-tilt">
           <div class="screen-chrome">
             <span class="dot dot-r"></span>
@@ -278,7 +308,19 @@
             </ul>
             <a href="#contact" class="btn btn-accent js-open-install">Piloter mes boutiques</a>
           </div>
-          <div class="mod-img"><img src="assets/img/mesboutiques.png" alt="MalCom Multi-Boutiques" class="js-zoomable"></div>
+          <div class="mod-img mod-dual-img">
+            <div class="mod-view-switcher">
+              <button type="button" class="mvs-btn active" data-view="ui">Capture Écran</button>
+              <button type="button" class="mvs-btn" data-view="motion">✦ Réseau 3D</button>
+            </div>
+            <div class="mvs-panel active" id="mvs-ui">
+              <img src="assets/img/mesboutiques.png" alt="MalCom Multi-Boutiques" class="js-zoomable">
+            </div>
+            <div class="mvs-panel" id="mvs-motion">
+              <img src="assets/img/motion-network.jpg" alt="Architecture Réseau MalCom 3D Motion" class="js-zoomable">
+              <div class="mvs-caption">Visualisation 3D du réseau multi-sites &amp; consolidation automatique</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -348,35 +390,48 @@
       </div>
 
       <div class="bento reveal">
+        <!-- 3D Featured Showcase Card: Offline Vault & Anti-Fraude -->
+        <div class="bento-item bento-featured">
+          <div class="bento-featured-content">
+            <div class="bento-pill-tag"><span class="pulse-dot-green"></span> Sécurité Militaire Hors-Ligne</div>
+            <h4 class="bento-title">Zéro dépendance Internet &amp; Coffre-fort crypté</h4>
+            <p class="bento-desc">Délestage ou coupure de fibre générale ? MalCom continue de fonctionner sans interruption. Toutes vos transactions et stocks sont scellés dans un coffre-fort local crypté avec journal d'audit infalsifiable.</p>
+            <div class="bento-badges-row">
+              <span class="bento-badge">⚡ 100% Fonctionnel hors-ligne</span>
+              <span class="bento-badge">🛡️ Base locale sécurisée</span>
+              <span class="bento-badge">💾 Sauvegarde clé USB &amp; Cloud</span>
+            </div>
+          </div>
+          <div class="bento-featured-media">
+            <div class="bento-motion-wrap">
+              <img src="assets/img/motion-security.jpg" alt="Coffre-fort local 3D motion" class="bento-motion-img js-zoomable">
+              <div class="bento-motion-glow"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-item">
+          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h4 class="bento-title">Support réactif à Bamako</h4>
+          <p class="bento-desc">Assistance locale 6j/7 par téléphone et WhatsApp direct avec possibilité d'intervention sur site.</p>
+        </div>
+
         <div class="bento-item">
           <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h4 class="bento-title">Roles utilisateurs</h4>
           <p class="bento-desc">Acces separes pour caissiers, vendeurs, gestionnaires et comptables. Les vendeurs ne voient jamais vos prix d'achat.</p>
         </div>
+
         <div class="bento-item">
           <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
           <h4 class="bento-title">Recherche Spotlight</h4>
           <p class="bento-desc">Recherche instantanee : # pour un produit, @ pour un client, ! pour retrouver une facture.</p>
         </div>
+
         <div class="bento-item">
           <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           <h4 class="bento-title">Journal d'audit</h4>
           <p class="bento-desc">Chaque suppression, remise ou modification est tracee avec la date, l'heure et l'operateur.</p>
-        </div>
-        <div class="bento-item">
-          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-          <h4 class="bento-title">Sauvegarde auto</h4>
-          <p class="bento-desc">Sauvegardez sur cle USB ou dans le Cloud en un clic. Protege meme en cas de panne.</p>
-        </div>
-        <div class="bento-item">
-          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/></svg></div>
-          <h4 class="bento-title">Zero dependance Internet</h4>
-          <p class="bento-desc">Coupure de fibre ? Votre magasin continue de vendre, imprimer et gerer les stocks.</p>
-        </div>
-        <div class="bento-item">
-          <div class="bento-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h4 class="bento-title">Support reactif</h4>
-          <p class="bento-desc">Assistance locale a Bamako 6j/7 par telephone et WhatsApp avec intervention sur site.</p>
         </div>
       </div>
     </div>
@@ -389,6 +444,63 @@
       <div class="section-head reveal">
         <div class="section-tag">Compatibilite</div>
         <h2 class="section-title">Fonctionne avec votre materiel existant</h2>
+      </div>
+
+      <!-- 3D Hardware Motion Design Showcase -->
+      <div class="hw-showcase reveal">
+        <div class="hw-showcase-visual">
+          <div class="hw-visual-container">
+            <img src="assets/img/motion-hardware.jpg" alt="Écosystème Matériel MalCom 3D Motion" class="hw-visual-img js-zoomable">
+            <div class="hw-visual-radial"></div>
+            <!-- Floating interactive pins -->
+            <div class="hw-float-pin pin-printer">
+              <span class="pin-pulse"></span>
+              <span class="pin-text">Thermique 58/80mm rapide</span>
+            </div>
+            <div class="hw-float-pin pin-scanner">
+              <span class="pin-pulse"></span>
+              <span class="pin-text">Douchette Laser 1D / 2D QR</span>
+            </div>
+            <div class="hw-float-pin pin-drawer">
+              <span class="pin-pulse"></span>
+              <span class="pin-text">Tiroir-Caisse RJ11 synchronis&eacute;</span>
+            </div>
+          </div>
+        </div>
+        <div class="hw-showcase-info">
+          <div class="section-tag" style="margin-bottom:12px;">Plug &amp; Play Instantan&eacute;</div>
+          <h3 class="hw-info-title">Branchez en USB.<br>Encaissez imm&eacute;diatement.</h3>
+          <p class="hw-info-sub">Oubliez les installations fastidieuses et les pilotes introuvables. MalCom reconna&icirc;t nativement les p&eacute;riph&eacute;riques standards de point de vente sans aucun casse-t&ecirc;te.</p>
+          <div class="hw-specs">
+            <div class="hw-spec-card">
+              <div class="hw-spec-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <div class="hw-spec-head">Z&eacute;ro Pilote &amp; Connexion Directe</div>
+                <div class="hw-spec-body">D&eacute;tection USB automatique sous Windows 10, 11 et macOS.</div>
+              </div>
+            </div>
+            <div class="hw-spec-card">
+              <div class="hw-spec-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div>
+                <div class="hw-spec-head">&Eacute;conomique &amp; Robuste</div>
+                <div class="hw-spec-body">Z&eacute;ro encre requise pour les imprimantes thermiques. Rouleaux standard partout &agrave; Bamako.</div>
+              </div>
+            </div>
+            <div class="hw-spec-card">
+              <div class="hw-spec-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <div class="hw-spec-head">Tiroir-Caisse S&eacute;curis&eacute; RJ11</div>
+                <div class="hw-spec-body">&Eacute;jection automatique du tiroir &agrave; l'encaissement et verrouillage s&eacute;curis&eacute;.</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="hw-grid reveal">
@@ -593,6 +705,19 @@
             <div class="cta-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg> Telephone : <a href="tel:+22382200766">+223 82 20 07 66</a></div>
             <div class="cta-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--wa)"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg> WhatsApp : <a href="https://wa.me/22382200766" target="_blank">Discuter avec AMD-Service</a></div>
             <div class="cta-contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Bamako, Mali &mdash; Zone UEMOA</div>
+          </div>
+
+          <!-- 3D Motion Design Network Mini Card -->
+          <div class="cta-motion-card">
+            <div class="cmc-img-box">
+              <img src="assets/img/motion-network.jpg" alt="Réseau connecté MalCom" class="cmc-img js-zoomable">
+              <div class="cmc-tag"><span class="hm-pulse-dot"></span> Réseau commercial en direct</div>
+            </div>
+            <div class="cmc-stats">
+              <div class="cmc-stat"><strong>120+</strong><span>Boutiques au Mali</span></div>
+              <div class="cmc-stat"><strong>0 FCFA</strong><span>Perdu en erreurs</span></div>
+              <div class="cmc-stat"><strong>30 min</strong><span>Pour installer</span></div>
+            </div>
           </div>
         </div>
         <div class="form-card">

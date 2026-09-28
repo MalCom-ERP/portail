@@ -119,7 +119,7 @@ function initBentoGlow() {
   });
 }
 
-/* ─────────── 4. MODULE TABS ─────────── */
+/* ─────────── 4. MODULE TABS & VIEW SWITCHERS ─────────── */
 function initTabs() {
   const btns = document.querySelectorAll('.tab-btn');
   const panes = document.querySelectorAll('.tab-pane');
@@ -133,6 +133,23 @@ function initTabs() {
         p.classList.remove('active');
         if (p.id === targetId) p.classList.add('active');
       });
+    });
+  });
+
+  // Dual View Switcher (e.g. Multi-Boutiques Software vs 3D Network)
+  document.querySelectorAll('.mvs-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const view = btn.getAttribute('data-view');
+      const parent = btn.closest('.mod-dual-img');
+      if (!parent) return;
+
+      parent.querySelectorAll('.mvs-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      parent.querySelectorAll('.mvs-panel').forEach(p => p.classList.remove('active'));
+      const target = parent.querySelector(`#mvs-${view}`);
+      if (target) target.classList.add('active');
     });
   });
 }
@@ -268,10 +285,17 @@ function initLightbox() {
 
   if (!lb || !lbImg) return;
 
-  document.querySelectorAll('.js-zoomable').forEach(img => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.src;
-      if (lbCap) lbCap.textContent = img.alt || 'Apercu MalCom';
+  document.querySelectorAll('.js-zoomable').forEach(el => {
+    el.addEventListener('click', (e) => {
+      let targetImg = el;
+      if (el.tagName.toLowerCase() !== 'img') {
+        targetImg = el.querySelector('img');
+      }
+      if (!targetImg || !targetImg.src) return;
+
+      lbImg.src = targetImg.src;
+      const title = el.getAttribute('data-title') || targetImg.alt || el.getAttribute('title') || 'Aperçu 3D MalCom';
+      if (lbCap) lbCap.textContent = title;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
