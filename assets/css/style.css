@@ -131,10 +131,10 @@ body::after {
 }
 
 .nav-logo img {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(107, 58, 253, 0.4));
 }
 
 .nav-logo-text {
