@@ -1,11 +1,12 @@
 /* ─────────────────────────────────────────────────────────────
-   MALCOM VITRINE V3 — JAVASCRIPT
-   Scroll reveals, 3D tilt, mouse glow, tabs, FAQ, calculator,
-   modals, lightbox, forms, mobile menu
+   MALCOM VITRINE — JAVASCRIPT (IMPECCABLE EDITION)
+   Smooth Reveals, Interactive Counters, 3D Tilt, Bento Spotlight,
+   Tabs, FAQ Accordion, Realtime ROI Calculator, Modals, Lightbox
    ───────────────────────────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
+  initStatCounters();
   initTypewriter();
   initHeroTilt();
   initBentoGlow();
@@ -28,13 +29,13 @@ function initTypewriter() {
   const cursor = h1.querySelector('.tw-cursor');
   if (!lines.length) return;
 
-  // Wait for the reveal animation to complete before typing
-  const startDelay = 800;
-  const charSpeed = 55;
-  const linePause = 400;
+  // If text already populated, do smooth reveal without blank flash
+  const startDelay = 500;
+  const charSpeed = 45;
+  const linePause = 350;
 
   function typeLine(lineEl, callback) {
-    const text = lineEl.getAttribute('data-text') || '';
+    const text = lineEl.getAttribute('data-text') || lineEl.textContent || '';
     lineEl.textContent = '';
     let i = 0;
 
@@ -52,17 +53,21 @@ function initTypewriter() {
 
   function typeAllLines(index) {
     if (index >= lines.length) {
-      // Typing done — fade out cursor
       if (cursor) cursor.classList.add('tw-done');
       return;
     }
     typeLine(lines[index], () => typeAllLines(index + 1));
   }
 
-  setTimeout(() => typeAllLines(0), startDelay);
+  // Only run typewriter if screen is wider than mobile to prevent jumping
+  if (window.innerWidth > 768) {
+    setTimeout(() => typeAllLines(0), startDelay);
+  } else if (cursor) {
+    cursor.style.display = 'none';
+  }
 }
 
-/* ─────────── 1. SCROLL REVEAL ANIMATIONS ─────────── */
+/* ─────────── 1. SCROLL REVEALS & STAT COUNTERS ─────────── */
 function initScrollReveals() {
   const reveals = document.querySelectorAll('.reveal');
   if (!reveals.length) return;
@@ -74,9 +79,62 @@ function initScrollReveals() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   reveals.forEach(el => observer.observe(el));
+}
+
+function initStatCounters() {
+  const statBoxes = document.querySelectorAll('.stat-box');
+  if (!statBoxes.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const valEl = entry.target.querySelector('.stat-val');
+        if (valEl && valEl.dataset.count) {
+          const target = parseInt(valEl.dataset.count, 10);
+          animateCount(valEl, target);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  statBoxes.forEach(box => observer.observe(box));
+
+  function animateCount(el, target) {
+    const duration = 1600;
+    const start = 0;
+    const startTime = performance.now();
+    const originalText = el.textContent;
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out expo
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = Math.round(start + (target - start) * ease);
+
+      if (originalText.startsWith('+')) {
+        el.textContent = '+' + current;
+      } else if (originalText.endsWith('%')) {
+        el.textContent = current + '%';
+      } else if (originalText.endsWith('min')) {
+        el.textContent = current + ' min';
+      } else {
+        el.textContent = current;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = originalText;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
 }
 
 /* ─────────── 2. HERO 3D TILT ON MOUSE ─────────── */
@@ -87,25 +145,33 @@ function initHeroTilt() {
   const wrap = screen.closest('.hero-screen-wrap');
   if (!wrap) return;
 
-  wrap.addEventListener('mousemove', (e) => {
-    const rect = wrap.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
+  let ticking = false;
 
-    screen.style.transform = `rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
+  wrap.addEventListener('mousemove', (e) => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = wrap.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        screen.style.transform = `rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 
   wrap.addEventListener('mouseleave', () => {
-    screen.style.transform = 'rotateX(2deg)';
-    screen.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1)';
+    screen.style.transform = 'rotateX(2.5deg)';
+    screen.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
   });
 
   wrap.addEventListener('mouseenter', () => {
-    screen.style.transition = 'transform 0.08s ease-out';
+    screen.style.transition = 'transform 0.1s ease-out';
   });
 }
 
-/* ─────────── 3. BENTO MOUSE-TRACKING GLOW ─────────── */
+/* ─────────── 3. BENTO MOUSE-TRACKING SPOTLIGHT ─────────── */
 function initBentoGlow() {
   const items = document.querySelectorAll('.bento-item');
   items.forEach(item => {
@@ -136,7 +202,7 @@ function initTabs() {
     });
   });
 
-  // Dual View Switcher (e.g. Multi-Boutiques Software vs 3D Network)
+  // Dual View Switcher (Multi-Boutiques Software vs 3D Network)
   document.querySelectorAll('.mvs-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -174,13 +240,13 @@ function initFaq() {
 
       if (!isActive) {
         item.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + 30 + 'px';
+        answer.style.maxHeight = answer.scrollHeight + 32 + 'px';
       }
     });
   });
 }
 
-/* ─────────── 6. ROI CALCULATOR ─────────── */
+/* ─────────── 6. INTERACTIVE ROI CALCULATOR WITH PRESETS & ANIMATIONS ─────────── */
 function initCalculator() {
   const typeSelect = document.getElementById('calc-type');
   const salesRange = document.getElementById('calc-sales');
@@ -189,38 +255,107 @@ function initCalculator() {
   const resHours = document.getElementById('res-hours');
   const resErrors = document.getElementById('res-errors');
   const resAnnual = document.getElementById('res-annual');
+  const chips = document.querySelectorAll('.calc-chip');
 
   if (!typeSelect || !salesRange) return;
 
   const configs = {
-    'quincaillerie': { basket: 35000, leak: 0.035 },
-    'alimentation': { basket: 8000, leak: 0.04 },
-    'boutique_mode': { basket: 18000, leak: 0.03 },
-    'grossiste': { basket: 250000, leak: 0.02 },
-    'pieces_auto': { basket: 45000, leak: 0.035 }
+    'quincaillerie': { basket: 35000, leak: 0.035, stockPct: 60, creditPct: 25, errorPct: 15 },
+    'alimentation': { basket: 8000, leak: 0.04, stockPct: 50, creditPct: 35, errorPct: 15 },
+    'boutique_mode': { basket: 18000, leak: 0.03, stockPct: 55, creditPct: 30, errorPct: 15 },
+    'grossiste': { basket: 250000, leak: 0.02, stockPct: 40, creditPct: 45, errorPct: 15 },
+    'pieces_auto': { basket: 45000, leak: 0.035, stockPct: 65, creditPct: 20, errorPct: 15 }
   };
 
-  function update() {
+  let currentMonthly = 1653750;
+  let currentAnnual = 19845000;
+
+  function update(animate = false) {
     const sales = parseInt(salesRange.value, 10);
-    const cfg = configs[typeSelect.value] || configs['quincaillerie'];
+    const sectorKey = typeSelect.value;
+    const cfg = configs[sectorKey] || configs['quincaillerie'];
 
     if (salesVal) salesVal.textContent = sales + ' ventes / jour';
 
     const hours = Math.min(22, Math.max(8, Math.round(sales * 0.25 + 5)));
-    const monthly = Math.round(sales * cfg.basket * 30 * cfg.leak);
-    const annual = monthly * 12;
+    const targetMonthly = Math.round(sales * cfg.basket * 30 * cfg.leak);
+    const targetAnnual = targetMonthly * 12;
 
     if (resHours) resHours.textContent = hours + ' h / sem.';
-    if (resRev) resRev.textContent = fmt(monthly) + ' FCFA';
     if (resErrors) resErrors.textContent = '99.8%';
-    if (resAnnual) resAnnual.textContent = fmt(annual) + ' FCFA';
+
+    if (animate) {
+      tweenNumber(resRev, currentMonthly, targetMonthly, ' FCFA');
+      tweenNumber(resAnnual, currentAnnual, targetAnnual, ' FCFA');
+    } else {
+      if (resRev) resRev.textContent = fmt(targetMonthly) + ' FCFA';
+      if (resAnnual) resAnnual.textContent = fmt(targetAnnual) + ' FCFA';
+    }
+
+    currentMonthly = targetMonthly;
+    currentAnnual = targetAnnual;
+
+    // Update progress bar breakdown if present
+    const barStock = document.querySelector('.calc-bar-stock');
+    const barCredit = document.querySelector('.calc-bar-credit');
+    const barErrors = document.querySelector('.calc-bar-errors');
+    if (barStock && barCredit && barErrors) {
+      barStock.style.width = cfg.stockPct + '%';
+      barCredit.style.width = cfg.creditPct + '%';
+      barErrors.style.width = cfg.errorPct + '%';
+    }
   }
 
-  function fmt(n) { return new Intl.NumberFormat('fr-FR').format(n); }
+  function tweenNumber(el, fromVal, toVal, suffix = '') {
+    if (!el) return;
+    const duration = 400;
+    const startTime = performance.now();
 
-  salesRange.addEventListener('input', update);
-  typeSelect.addEventListener('change', update);
-  update();
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const val = Math.round(fromVal + (toVal - fromVal) * ease);
+      el.textContent = fmt(val) + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = fmt(toVal) + suffix;
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function fmt(n) {
+    return new Intl.NumberFormat('fr-FR').format(n);
+  }
+
+  // Chip buttons interaction
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const val = chip.getAttribute('data-type');
+      if (val && typeSelect) {
+        typeSelect.value = val;
+        update(true);
+      }
+    });
+  });
+
+  typeSelect.addEventListener('change', () => {
+    const val = typeSelect.value;
+    chips.forEach(c => {
+      c.classList.toggle('active', c.getAttribute('data-type') === val);
+    });
+    update(true);
+  });
+
+  salesRange.addEventListener('input', () => update(false));
+  salesRange.addEventListener('change', () => update(true));
+
+  update(false);
 }
 
 /* ─────────── 7. MODALS ─────────── */
@@ -276,7 +411,7 @@ function initModals() {
   }
 }
 
-/* ─────────── 8. LIGHTBOX ─────────── */
+/* ─────────── 8. FULLSCREEN LIGHTBOX ─────────── */
 function initLightbox() {
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
@@ -294,7 +429,7 @@ function initLightbox() {
       if (!targetImg || !targetImg.src) return;
 
       lbImg.src = targetImg.src;
-      const title = el.getAttribute('data-title') || targetImg.alt || el.getAttribute('title') || 'Aperçu 3D MalCom';
+      const title = el.getAttribute('data-title') || targetImg.alt || el.getAttribute('title') || 'Aperçu MalCom Pro';
       if (lbCap) lbCap.textContent = title;
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -316,7 +451,7 @@ function initLightbox() {
   });
 }
 
-/* ─────────── 9. FORM HANDLER ─────────── */
+/* ─────────── 9. DIRECT WHATSAPP LEAD DISPATCH ─────────── */
 function initForms() {
   document.querySelectorAll('.js-quick-install-form').forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -329,11 +464,11 @@ function initForms() {
       const city = get('client_city') || 'Bamako';
 
       if (!name || !phone) {
-        alert('Veuillez renseigner votre nom et votre numero de telephone.');
+        alert('Veuillez renseigner votre nom et votre numéro WhatsApp.');
         return;
       }
 
-      const msg = `Bonjour AMD-Service,%0A%0AJe souhaite demander l'installation du logiciel *MalCom* pour mon commerce :%0A- *Nom* : ${encodeURIComponent(name)}%0A- *Telephone* : ${encodeURIComponent(phone)}%0A- *Type d'activite* : ${encodeURIComponent(shop || 'Commerce general')}%0A- *Localisation* : ${encodeURIComponent(city)}%0A%0AMerci de me recontacter pour planifier l'installation.`;
+      const msg = `Bonjour AMD-Service,%0A%0AJe souhaite planifier l'installation du logiciel *MalCom* pour mon commerce :%0A- *Nom* : ${encodeURIComponent(name)}%0A- *WhatsApp* : ${encodeURIComponent(phone)}%0A- *Type de commerce* : ${encodeURIComponent(shop || 'Commerce général')}%0A- *Localisation* : ${encodeURIComponent(city)}%0A%0AMerci de me contacter pour convenir d'un rendez-vous.`;
       window.open(`https://wa.me/22382200766?text=${msg}`, '_blank');
 
       form.reset();
@@ -347,40 +482,46 @@ function initForms() {
   });
 }
 
-/* ─────────── 10. MOBILE MENU ─────────── */
+/* ─────────── 10. MOBILE MENU OVERLAY ─────────── */
 function initMobileMenu() {
   const btn = document.querySelector('.mobile-toggle');
   const links = document.querySelector('.nav-links');
   if (!btn || !links) return;
 
   btn.addEventListener('click', () => {
-    const vis = links.style.display === 'flex';
-    if (vis) {
+    const isVisible = links.classList.contains('mobile-open');
+    if (isVisible) {
+      links.classList.remove('mobile-open');
       links.style.display = 'none';
     } else {
+      links.classList.add('mobile-open');
       links.style.display = 'flex';
       links.style.flexDirection = 'column';
       links.style.position = 'absolute';
-      links.style.top = '60px';
+      links.style.top = '68px';
       links.style.left = '0';
       links.style.right = '0';
-      links.style.background = 'var(--bg-card)';
-      links.style.padding = '20px 28px';
+      links.style.background = 'rgba(13, 11, 26, 0.96)';
+      links.style.backdropFilter = 'blur(20px)';
+      links.style.padding = '24px 28px';
       links.style.borderBottom = '1px solid var(--border)';
-      links.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
-      links.style.gap = '16px';
+      links.style.boxShadow = '0 25px 60px rgba(0,0,0,0.8)';
+      links.style.gap = '18px';
       links.style.zIndex = '100';
     }
   });
 
   links.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      if (window.innerWidth <= 768) links.style.display = 'none';
+      if (window.innerWidth <= 768) {
+        links.classList.remove('mobile-open');
+        links.style.display = 'none';
+      }
     });
   });
 }
 
-/* ─────────── 11. SCROLL ACTIVE NAV ─────────── */
+/* ─────────── 11. ACTIVE NAV ON SCROLL ─────────── */
 function initScrollNav() {
   const sections = document.querySelectorAll('section[id], header[id]');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -390,15 +531,15 @@ function initScrollNav() {
     const scrollY = window.pageYOffset;
 
     sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
+      const top = sec.offsetTop - 130;
       const height = sec.offsetHeight;
       const id = sec.getAttribute('id');
-      if (scrollY > top && scrollY <= top + height) current = id;
+      if (scrollY >= top && scrollY < top + height) current = id;
     });
 
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
     });
-  });
+  }, { passive: true });
 }
