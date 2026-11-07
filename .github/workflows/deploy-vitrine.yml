@@ -1,0 +1,36 @@
+name: Deploy Vitrine (malcom-lgc.com)
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Vitrine
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Prepare Remote Directory & Deploy Vitrine via Rsync
+        run: |
+          ssh -T ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "mkdir -p /var/www/malcom/vitrine"
+          rsync -avz --delete \
+            --no-owner --no-group \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.agent' \
+            --exclude='.gemini' \
+            --exclude='.impeccable' \
+            --exclude='.wrangler' \
+            --exclude='.DS_Store' \
+            ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/malcom/vitrine/
+
