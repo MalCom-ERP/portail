@@ -1,0 +1,21 @@
+{
+  "name": "MalCom Pro",
+  "short_name": "MalCom",
+  "description": "Logiciel de caisse, stocks et multi-boutiques 100% hors-ligne pour la zone UEMOA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b14",
+  "theme_color": "#6b3afd",
+  "icons": [
+    {
+      "src": "assets/img/Icone_Droite/icone_droite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/img/icone_droite.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

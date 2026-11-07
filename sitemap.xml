@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://malcom-lgc.com/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/accueil.png</image:loc>
+      <image:title>MalCom Pro — Tableau de bord de gestion commerciale et caisse</image:title>
+      <image:caption>Interface principale de MalCom Pro montrant le chiffre d'affaires, les alertes de stock et les statistiques de vente.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/vente1.png</image:loc>
+      <image:title>Caisse Enregistreuse POS Haute Vitesse MalCom Pro</image:title>
+      <image:caption>Écran d'encaissement express compatible douchettes code-barres et imprimantes thermiques 58/80mm.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/stock.png</image:loc>
+      <image:title>Gestion des Stocks et Inventaire au gramme près</image:title>
+      <image:caption>Suivi des mouvements, alertes de seuil critique et valorisation en Francs CFA.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/mesboutiques.png</image:loc>
+      <image:title>Supervision Réseau Multi-Boutiques à Distance</image:title>
+      <image:caption>Consolidation du chiffre d'affaires et transferts inter-dépôts en temps réel.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/credit.png</image:loc>
+      <image:title>Suivi des Créances et Crédits Clients</image:title>
+      <image:caption>Bordereaux de créances infalsifiables et historique des règlements d'acomptes.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/facture.png</image:loc>
+      <image:title>Facturation Normalisée UEMOA et Ticket Z</image:title>
+      <image:caption>Factures professionnelles certifiées conformes aux normes fiscales UEMOA / SYSCOHADA.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://malcom-lgc.com/assets/img/motion-hardware.jpg</image:loc>
+      <image:title>Écosystème Matériel MalCom Pro — Imprimante thermique, douchette, tiroir-caisse</image:title>
+      <image:caption>Compatibilité complète matériel de caisse POS professionnel.</image:caption>
+    </image:image>
+  </url>
+</urlset>

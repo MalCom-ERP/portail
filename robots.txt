@@ -1,0 +1,8 @@
+# MalCom Pro — Robots.txt
+# https://malcom-lgc.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://malcom-lgc.com/sitemap.xml
