@@ -1,15 +1,11 @@
 /* ─────────────────────────────────────────────────────────────
-   MALCOM VITRINE — JAVASCRIPT (IMPECCABLE EDITION)
-   Smooth Reveals, Interactive Counters, 3D Tilt, Bento Spotlight,
-   Tabs, FAQ Accordion, Realtime ROI Calculator, Modals, Lightbox
+   MALCOM PRO — JAVASCRIPT HAUTE PERFORMANCE
+   Smooth Reveals, Tabs, FAQ Accordion, Realtime ROI Calculator,
+   Modals, Fullscreen Lightbox, WhatsApp Lead Generation
    ───────────────────────────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
-  initStatCounters();
-  initTypewriter();
-  initHeroTilt();
-  initBentoGlow();
   initTabs();
   initFaq();
   initCalculator();
@@ -20,54 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollNav();
 });
 
-/* ─────────── 0. TYPEWRITER HERO ─────────── */
-function initTypewriter() {
-  const h1 = document.querySelector('.typewriter-h1');
-  if (!h1) return;
-
-  const lines = h1.querySelectorAll('.tw-line');
-  const cursor = h1.querySelector('.tw-cursor');
-  if (!lines.length) return;
-
-  // If text already populated, do smooth reveal without blank flash
-  const startDelay = 500;
-  const charSpeed = 45;
-  const linePause = 350;
-
-  function typeLine(lineEl, callback) {
-    const text = lineEl.getAttribute('data-text') || lineEl.textContent || '';
-    lineEl.textContent = '';
-    let i = 0;
-
-    function typeChar() {
-      if (i < text.length) {
-        lineEl.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeChar, charSpeed);
-      } else if (callback) {
-        setTimeout(callback, linePause);
-      }
-    }
-    typeChar();
-  }
-
-  function typeAllLines(index) {
-    if (index >= lines.length) {
-      if (cursor) cursor.classList.add('tw-done');
-      return;
-    }
-    typeLine(lines[index], () => typeAllLines(index + 1));
-  }
-
-  // Only run typewriter if screen is wider than mobile to prevent jumping
-  if (window.innerWidth > 768) {
-    setTimeout(() => typeAllLines(0), startDelay);
-  } else if (cursor) {
-    cursor.style.display = 'none';
-  }
-}
-
-/* ─────────── 1. SCROLL REVEALS & STAT COUNTERS ─────────── */
+/* ─────────── 1. SCROLL REVEALS ─────────── */
 function initScrollReveals() {
   const reveals = document.querySelectorAll('.reveal');
   if (!reveals.length) return;
@@ -84,143 +33,43 @@ function initScrollReveals() {
   reveals.forEach(el => observer.observe(el));
 }
 
-function initStatCounters() {
-  const statBoxes = document.querySelectorAll('.stat-box');
-  if (!statBoxes.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const valEl = entry.target.querySelector('.stat-val');
-        if (valEl && valEl.dataset.count) {
-          const target = parseInt(valEl.dataset.count, 10);
-          animateCount(valEl, target);
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.25 });
-
-  statBoxes.forEach(box => observer.observe(box));
-
-  function animateCount(el, target) {
-    const duration = 1600;
-    const start = 0;
-    const startTime = performance.now();
-    const originalText = el.textContent;
-
-    function update(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out expo
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = Math.round(start + (target - start) * ease);
-
-      if (originalText.startsWith('+')) {
-        el.textContent = '+' + current;
-      } else if (originalText.endsWith('%')) {
-        el.textContent = current + '%';
-      } else if (originalText.endsWith('min')) {
-        el.textContent = current + ' min';
-      } else {
-        el.textContent = current;
-      }
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = originalText;
-      }
-    }
-
-    requestAnimationFrame(update);
-  }
-}
-
-/* ─────────── 2. HERO 3D TILT ON MOUSE ─────────── */
-function initHeroTilt() {
-  const screen = document.getElementById('hero-tilt');
-  if (!screen) return;
-
-  const wrap = screen.closest('.hero-screen-wrap');
-  if (!wrap) return;
-
-  let ticking = false;
-
-  wrap.addEventListener('mousemove', (e) => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const rect = wrap.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-        screen.style.transform = `rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
-  wrap.addEventListener('mouseleave', () => {
-    screen.style.transform = 'rotateX(2.5deg)';
-    screen.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
-  });
-
-  wrap.addEventListener('mouseenter', () => {
-    screen.style.transition = 'transform 0.1s ease-out';
-  });
-}
-
-/* ─────────── 3. BENTO MOUSE-TRACKING SPOTLIGHT ─────────── */
-function initBentoGlow() {
-  const items = document.querySelectorAll('.bento-item');
-  items.forEach(item => {
-    item.addEventListener('mousemove', (e) => {
-      const rect = item.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      item.style.setProperty('--mouse-x', x + 'px');
-      item.style.setProperty('--mouse-y', y + 'px');
-    });
-  });
-}
-
-/* ─────────── 4. MODULE TABS & VIEW SWITCHERS ─────────── */
+/* ─────────── 2. INTERACTIVE MODULE TABS ─────────── */
 function initTabs() {
   const btns = document.querySelectorAll('.tab-btn');
   const panes = document.querySelectorAll('.tab-pane');
 
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-tab');
+      const target = btn.dataset.tab;
+      if (!target) return;
+
       btns.forEach(b => b.classList.remove('active'));
+      panes.forEach(p => p.classList.remove('active'));
+
       btn.classList.add('active');
-      panes.forEach(p => {
-        p.classList.remove('active');
-        if (p.id === targetId) p.classList.add('active');
-      });
+      const activePane = document.getElementById('tab-' + target);
+      if (activePane) activePane.classList.add('active');
     });
   });
 
-  // Dual View Switcher (Multi-Boutiques Software vs 3D Network)
+  // Dual view switcher for multi-boutique
   document.querySelectorAll('.mvs-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const view = btn.getAttribute('data-view');
+    btn.addEventListener('click', () => {
       const parent = btn.closest('.mod-dual-img');
       if (!parent) return;
 
       parent.querySelectorAll('.mvs-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
       parent.querySelectorAll('.mvs-panel').forEach(p => p.classList.remove('active'));
-      const target = parent.querySelector(`#mvs-${view}`);
-      if (target) target.classList.add('active');
+
+      btn.classList.add('active');
+      const view = btn.dataset.view;
+      const targetPanel = parent.querySelector('#mvs-' + view);
+      if (targetPanel) targetPanel.classList.add('active');
     });
   });
 }
 
-/* ─────────── 5. FAQ ACCORDION ─────────── */
+/* ─────────── 3. FAQ ACCORDION ─────────── */
 function initFaq() {
   const items = document.querySelectorAll('.faq-item');
 
@@ -246,7 +95,7 @@ function initFaq() {
   });
 }
 
-/* ─────────── 6. INTERACTIVE ROI CALCULATOR WITH PRESETS & ANIMATIONS ─────────── */
+/* ─────────── 4. INTERACTIVE ROI CALCULATOR ─────────── */
 function initCalculator() {
   const typeSelect = document.getElementById('calc-type');
   const salesRange = document.getElementById('calc-sales');
@@ -295,20 +144,19 @@ function initCalculator() {
     currentMonthly = targetMonthly;
     currentAnnual = targetAnnual;
 
-    // Update progress bar breakdown if present
     const barStock = document.querySelector('.calc-bar-stock');
     const barCredit = document.querySelector('.calc-bar-credit');
     const barErrors = document.querySelector('.calc-bar-errors');
     if (barStock && barCredit && barErrors) {
-      barStock.style.width = cfg.stockPct + '%';
-      barCredit.style.width = cfg.creditPct + '%';
-      barErrors.style.width = cfg.errorPct + '%';
+      barStock.textContent = cfg.stockPct + '% Stock';
+      barCredit.textContent = cfg.creditPct + '% Crédits';
+      barErrors.textContent = cfg.errorPct + '% Erreurs';
     }
   }
 
   function tweenNumber(el, fromVal, toVal, suffix = '') {
     if (!el) return;
-    const duration = 400;
+    const duration = 350;
     const startTime = performance.now();
 
     function step(now) {
@@ -331,7 +179,6 @@ function initCalculator() {
     return new Intl.NumberFormat('fr-FR').format(n);
   }
 
-  // Chip buttons interaction
   chips.forEach(chip => {
     chip.addEventListener('click', () => {
       chips.forEach(c => c.classList.remove('active'));
@@ -358,7 +205,7 @@ function initCalculator() {
   update(false);
 }
 
-/* ─────────── 7. MODALS ─────────── */
+/* ─────────── 5. MODALS (INSTALL & DEMO) ─────────── */
 function initModals() {
   const installModal = document.getElementById('modal-install');
   const demoModal = document.getElementById('modal-demo');
@@ -411,7 +258,7 @@ function initModals() {
   }
 }
 
-/* ─────────── 8. FULLSCREEN LIGHTBOX ─────────── */
+/* ─────────── 6. FULLSCREEN LIGHTBOX ─────────── */
 function initLightbox() {
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
@@ -421,7 +268,7 @@ function initLightbox() {
   if (!lb || !lbImg) return;
 
   document.querySelectorAll('.js-zoomable').forEach(el => {
-    el.addEventListener('click', (e) => {
+    el.addEventListener('click', () => {
       let targetImg = el;
       if (el.tagName.toLowerCase() !== 'img') {
         targetImg = el.querySelector('img');
@@ -451,7 +298,7 @@ function initLightbox() {
   });
 }
 
-/* ─────────── 9. DIRECT WHATSAPP LEAD DISPATCH ─────────── */
+/* ─────────── 7. DIRECT WHATSAPP LEAD DISPATCH ─────────── */
 function initForms() {
   document.querySelectorAll('.js-quick-install-form').forEach(form => {
     form.addEventListener('submit', (e) => {
@@ -482,7 +329,7 @@ function initForms() {
   });
 }
 
-/* ─────────── 10. MOBILE MENU OVERLAY ─────────── */
+/* ─────────── 8. MOBILE MENU ─────────── */
 function initMobileMenu() {
   const btn = document.querySelector('.mobile-toggle');
   const links = document.querySelector('.nav-links');
@@ -498,10 +345,10 @@ function initMobileMenu() {
       links.style.display = 'flex';
       links.style.flexDirection = 'column';
       links.style.position = 'absolute';
-      links.style.top = '68px';
+      links.style.top = '72px';
       links.style.left = '0';
       links.style.right = '0';
-      links.style.background = 'rgba(13, 11, 26, 0.96)';
+      links.style.background = 'rgba(10, 13, 24, 0.98)';
       links.style.backdropFilter = 'blur(20px)';
       links.style.padding = '24px 28px';
       links.style.borderBottom = '1px solid var(--border)';
@@ -521,7 +368,7 @@ function initMobileMenu() {
   });
 }
 
-/* ─────────── 11. ACTIVE NAV ON SCROLL ─────────── */
+/* ─────────── 9. ACTIVE NAV ON SCROLL ─────────── */
 function initScrollNav() {
   const sections = document.querySelectorAll('section[id], header[id]');
   const navLinks = document.querySelectorAll('.nav-link');
