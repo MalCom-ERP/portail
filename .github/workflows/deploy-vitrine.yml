@@ -32,5 +32,6 @@ jobs:
             --exclude='.impeccable' \
             --exclude='.wrangler' \
             --exclude='.DS_Store' \
+            --exclude='downloads/' \
             ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/malcom/vitrine/
 

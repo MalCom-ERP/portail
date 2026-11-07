@@ -224,6 +224,25 @@ function initModals() {
     });
   });
 
+  // Switch between Standalone and Cloud editions inside the Demo/Download modal
+  document.querySelectorAll('.js-dl-edition-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const edition = btn.getAttribute('data-edition');
+      document.querySelectorAll('.js-dl-edition-btn').forEach(b => {
+        const isActive = b === btn;
+        b.classList.toggle('active', isActive);
+        b.style.background = isActive ? 'var(--brand)' : 'transparent';
+        b.style.color = isActive ? '#fff' : 'var(--text-muted)';
+      });
+      const standalonePanel = document.getElementById('dl-panel-standalone');
+      const cloudPanel = document.getElementById('dl-panel-cloud');
+      if (standalonePanel && cloudPanel) {
+        standalonePanel.style.display = edition === 'standalone' ? 'block' : 'none';
+        cloudPanel.style.display = edition === 'cloud' ? 'block' : 'none';
+      }
+    });
+  });
+
   document.querySelectorAll('.js-close-modal, .modal-close').forEach(btn => {
     btn.addEventListener('click', () => {
       const m = btn.closest('.modal-overlay');
