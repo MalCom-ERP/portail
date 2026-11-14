@@ -964,20 +964,55 @@ button, input, select, textarea {
   color: var(--text-body);
 }
 
-.bento-featured-media {
-  width: 260px;
+.sec-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  width: 280px;
   flex-shrink: 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  background: var(--bg-soft, #f8fafc);
   border: 1px solid var(--border);
-  cursor: zoom-in;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
 }
 
-.bento-featured-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.sec-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.sec-row + .sec-row { border-top: 1px solid var(--border); }
+
+.sec-ico {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--brand);
+}
+
+.sec-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.sec-state {
+  font-size: 12px;
+  font-weight: 600;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
 }
 
 /* ────────── 13. HARDWARE SHOWCASE ────────── */
@@ -997,13 +1032,37 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: zoom-in;
+  padding: 48px;
 }
 
-.hw-visual img {
+.hw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 420px;
+}
+
+.hw-tile {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 16px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+}
+
+.hw-tile svg { color: var(--brand); }
+
+.hw-tile span {
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-body);
 }
 
 .hw-info {
@@ -1804,7 +1863,8 @@ button, input, select, textarea {
   .sectors-grid { grid-template-columns: repeat(3, 1fr); }
   .bento { grid-template-columns: 1fr; }
   .bento-item.bento-featured { grid-column: span 1; flex-direction: column; }
-  .bento-featured-media { width: 100%; }
+  .sec-list { width: 100%; }
+  .hw-visual { padding: 32px 20px; }
   .hw-showcase { grid-template-columns: 1fr; }
   .calc-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
   .cta-layout { grid-template-columns: 1fr; padding: 36px; }

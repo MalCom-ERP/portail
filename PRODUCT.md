@@ -44,7 +44,6 @@ Un ERP et logiciel de caisse professionnel 100% opérationnel hors-ligne, conçu
 ## Evidence on Hand
 
 - **Captures réelles du logiciel** : `assets/img/accueil.png` (Dashboard), `assets/img/vente1.png` (Caisse POS), `assets/img/stock.png` (Stocks), `assets/img/mesboutiques.png` (Multi-boutiques), `assets/img/credit.png` (Crédits), `assets/img/depense.png` (Dépenses), `assets/img/facture.png` (Facturation UEMOA).
-- **Rendus 3D & Matériel** : `assets/img/motion-hardware.jpg`, `assets/img/motion-network.jpg`, `assets/img/motion-pos.jpg`, `assets/img/motion-security.jpg`.
 - **Logos officiels** : `assets/img/logo.svg`, `assets/img/Icone_Droite/icone_droite.svg`, `assets/img/app-icon.png`.
 - **Base installée confirmée** : Plus de 150 commerces déjà équipés et suivis au Mali (Bamako et régions).
 
