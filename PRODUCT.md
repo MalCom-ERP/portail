@@ -27,8 +27,9 @@ Un ERP et logiciel de caisse professionnel 100% opérationnel hors-ligne, conçu
 
 ## Capabilities and Constraints
 
-- **Encaissement Express (POS)** : Bascule détail / gros, impression de tickets thermiques personnalisés avec coordonnées du commerce.
-- **Gestion de Stock & Alertes** : Valorisation totale du stock en FCFA, alertes automatiques de seuil critique / rupture, fiches produits avec imports/exports Excel.
+- **Encaissement Express (POS)** : Bascule détail / gros, impression de tickets thermiques personnalisés avec coordonnées et logo du commerce, interfaces métier dédiées (Quincaillerie, Supérette, Mode/Bazin au mètre, Accessoires, Librairie, Téléphonie IMEI, Station Carburant, Dépôt de Boissons & Consignes, Pièces Auto OEM, Boulangerie & Fournil, Ferme Avicole).
+- **Gestion de Stock & Import/Export** : Valorisation totale du stock en FCFA, alertes automatiques de seuil critique / rupture, Import/Export CSV multi-boutiques (création automatique des catégories insensible à la casse et réapprovisionnement intelligent sans doublons).
+- **Fournisseurs & Approvisionnements (SYSCOHADA 401)** : Répertoire fournisseurs locaux & import, bons de commande, réceptions en dépôt, répartition des frais d'approche (611) et échéancier des dettes fournisseurs (401).
 - **Réseau Multi-Boutiques** : Consolidation du chiffre d'affaires multi-sites, transferts d'articles inter-dépôts, suivi à distance du gérant et du dirigeant.
 - **Crédits & Trésorerie** : Reçus d'acompte et bordereaux de créances infalsifiables, suivi rigoureux des soldes débiteurs.
 - **Comptabilité & Facturation** : Clôture journalière (ticket Z), suivi des charges d'exploitation, déduction du bénéfice net et facturation normalisée UEMOA / SYSCOHADA.
