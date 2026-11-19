@@ -1790,6 +1790,17 @@ button, input, select, textarea {
   box-shadow: var(--shadow-sm);
 }
 
+.dl-option--unavailable {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+.dl-option--unavailable:hover {
+  background: var(--bg-page);
+  border-color: var(--border);
+  box-shadow: none;
+}
+
 .dl-info {
   display: flex;
   align-items: center;

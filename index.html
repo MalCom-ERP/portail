@@ -50,7 +50,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.3">
 
   <!-- Structured Data / JSON-LD (Schema.org) -->
   <script type="application/ld+json">
@@ -187,7 +187,7 @@
 
   <!-- ═══ TOPBAR ═══ -->
   <div class="topbar">
-    <span class="topbar-badge">Version 4.4 Pro</span>
+    <span class="topbar-badge js-topbar-version">MalCom Pro</span>
     Conçu pour les commerces au Mali &amp; zone UEMOA &mdash; Installation sur site &amp; formation offerte &mdash;
     <a href="tel:+22382200766">+223 82 20 07 66</a>
   </div>
@@ -316,7 +316,7 @@
               <span class="dot-g"></span>
             </div>
             <div class="app-frame-title">
-              MalCom Desktop Pro v4.5.0 &mdash; Tableau de Bord Principal
+              MalCom Desktop Pro <span class="js-latest-version"></span> &mdash; Tableau de Bord Principal
             </div>
             <div class="app-frame-status">
               &bull; Base locale connectée
@@ -1572,7 +1572,7 @@
         <h3>
           <img src="assets/img/app-icon.png" alt="MalCom" width="24" height="24"
             style="width:24px;height:24px;border-radius:6px;" loading="lazy">
-          Télécharger MalCom Desktop v4.5.0
+          Télécharger MalCom Desktop <span class="js-latest-version"></span>
         </h3>
         <button class="modal-close js-close-modal" aria-label="Fermer la fenêtre">&times;</button>
       </div>
@@ -1606,7 +1606,7 @@
             </div>
           </div>
 
-          <a href="/downloads/MalCom-Pro-4.5.0-Windows-Setup.exe" download class="dl-option">
+          <a href="https://admin.malcom-lgc.com/api/app-updates/latest-download/pro/windows" class="dl-option" data-dl-edition="pro" data-dl-platform="windows">
             <div class="dl-info">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1615,13 +1615,13 @@
               </svg>
               <div>
                 <div class="dl-title">MalCom Pro pour Windows (64-bit)</div>
-                <p>Installateur .exe &bull; Windows 10 &amp; 11 (v4.5.0)</p>
+                <p class="js-dl-desc" data-os-label="Windows 10 &amp; 11">Installateur .exe &bull; Windows 10 &amp; 11 <span class="js-dl-meta">(dernière version)</span></p>
               </div>
             </div>
-            <span class="btn btn-accent btn-sm">Télécharger .exe</span>
+            <span class="btn btn-accent btn-sm js-dl-btn-label">Télécharger .exe</span>
           </a>
 
-          <a href="/downloads/MalCom-Pro-4.5.0-macOS-AppleSilicon.dmg" download class="dl-option">
+          <a href="https://admin.malcom-lgc.com/api/app-updates/latest-download/pro/macos-arm64" class="dl-option" data-dl-edition="pro" data-dl-platform="macos-arm64">
             <div class="dl-info">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1630,13 +1630,13 @@
               </svg>
               <div>
                 <div class="dl-title">MalCom Pro pour macOS (Apple Silicon)</div>
-                <p>Package .dmg &bull; Mac M1, M2, M3, M4 (v4.5.0)</p>
+                <p class="js-dl-desc" data-os-label="Mac M1, M2, M3, M4">Package .dmg &bull; Mac M1, M2, M3, M4 <span class="js-dl-meta">(dernière version)</span></p>
               </div>
             </div>
-            <span class="btn btn-outline btn-sm">Télécharger .dmg</span>
+            <span class="btn btn-outline btn-sm js-dl-btn-label">Télécharger .dmg</span>
           </a>
 
-          <a href="/downloads/MalCom-Pro-4.5.0-macOS-Intel.dmg" download class="dl-option" style="margin-bottom:0;">
+          <a href="https://admin.malcom-lgc.com/api/app-updates/latest-download/pro/macos-intel" class="dl-option" data-dl-edition="pro" data-dl-platform="macos-intel" style="margin-bottom:0;">
             <div class="dl-info">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1645,10 +1645,10 @@
               </svg>
               <div>
                 <div class="dl-title">MalCom Pro pour macOS (Intel)</div>
-                <p>Package .dmg &bull; Mac Pro / MacBook Intel x64 (v4.5.0)</p>
+                <p class="js-dl-desc" data-os-label="Mac Pro / MacBook Intel x64">Package .dmg &bull; Mac Pro / MacBook Intel x64 <span class="js-dl-meta">(dernière version)</span></p>
               </div>
             </div>
-            <span class="btn btn-outline btn-sm">Télécharger .dmg</span>
+            <span class="btn btn-outline btn-sm js-dl-btn-label">Télécharger .dmg</span>
           </a>
         </div>
 
@@ -1658,7 +1658,7 @@
             ☁️ Synchronisation temps réel avec le serveur Cloud MalCom &amp; mode hors-ligne hybride.
           </div>
 
-          <a href="/downloads/MalCom-Cloud-4.5.0-Windows-Setup.exe" download class="dl-option">
+          <a href="https://admin.malcom-lgc.com/api/app-updates/latest-download/cloud/windows" class="dl-option" data-dl-edition="cloud" data-dl-platform="windows">
             <div class="dl-info">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1667,13 +1667,13 @@
               </svg>
               <div>
                 <div class="dl-title">MalCom Cloud pour Windows (64-bit)</div>
-                <p>Installateur .exe &bull; Windows 10 &amp; 11 (v4.5.0)</p>
+                <p class="js-dl-desc" data-os-label="Windows 10 &amp; 11">Installateur .exe &bull; Windows 10 &amp; 11 <span class="js-dl-meta">(dernière version)</span></p>
               </div>
             </div>
-            <span class="btn btn-accent btn-sm">Télécharger .exe</span>
+            <span class="btn btn-accent btn-sm js-dl-btn-label">Télécharger .exe</span>
           </a>
 
-          <a href="/downloads/MalCom-Cloud-4.5.0-macOS-AppleSilicon.dmg" download class="dl-option">
+          <a href="https://admin.malcom-lgc.com/api/app-updates/latest-download/cloud/macos-arm64" class="dl-option" data-dl-edition="cloud" data-dl-platform="macos-arm64">
             <div class="dl-info">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1682,13 +1682,13 @@
               </svg>
               <div>
                 <div class="dl-title">MalCom Cloud pour macOS (Apple Silicon)</div>
-                <p>Package .dmg &bull; Mac M1, M2, M3, M4 (v4.5.0)</p>
+                <p class="js-dl-desc" data-os-label="Mac M1, M2, M3, M4">Package .dmg &bull; Mac M1, M2, M3, M4 <span class="js-dl-meta">(dernière version)</span></p>
               </div>
             </div>
-            <span class="btn btn-outline btn-sm">Télécharger .dmg</span>
+            <span class="btn btn-outline btn-sm js-dl-btn-label">Télécharger .dmg</span>
           </a>
 
-          <a href="/downloads/MalCom-Cloud-4.5.0-macOS-Intel.dmg" download class="dl-option" style="margin-bottom:0;">
+          <a href="https://admin.malcom-lgc.com/api/app-updates/latest-download/cloud/macos-intel" class="dl-option" data-dl-edition="cloud" data-dl-platform="macos-intel" style="margin-bottom:0;">
             <div class="dl-info">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.8">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -1697,17 +1697,17 @@
               </svg>
               <div>
                 <div class="dl-title">MalCom Cloud pour macOS (Intel)</div>
-                <p>Package .dmg &bull; Mac Pro / MacBook Intel x64 (v4.5.0)</p>
+                <p class="js-dl-desc" data-os-label="Mac Pro / MacBook Intel x64">Package .dmg &bull; Mac Pro / MacBook Intel x64 <span class="js-dl-meta">(dernière version)</span></p>
               </div>
             </div>
-            <span class="btn btn-outline btn-sm">Télécharger .dmg</span>
+            <span class="btn btn-outline btn-sm js-dl-btn-label">Télécharger .dmg</span>
           </a>
         </div>
 
         <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-muted);">
           <span>Besoin d'aide pour l'installation ?</span>
-          <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20j'ai%20telecharge%20MalCom%204.5.0%20et%20je%20souhaite%20une%20assistance"
-            target="_blank" style="color:var(--brand);font-weight:700;text-decoration:none;">
+          <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20j'ai%20telecharge%20MalCom%20et%20je%20souhaite%20une%20assistance"
+            target="_blank" class="js-dl-wa-help" style="color:var(--brand);font-weight:700;text-decoration:none;">
             Assistance WhatsApp &rarr;
           </a>
         </div>
@@ -1725,7 +1725,7 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/main.js?v=2.3"></script>
 </body>
 
 </html>
