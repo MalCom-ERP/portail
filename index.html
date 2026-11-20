@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>MalCom Pro — Logiciel de Caisse, Stocks &amp; Multi-Boutiques 100% Hors-Ligne</title>
   <meta name="description"
     content="MalCom verrouille vos caisses, trace vos stocks au gramme près et pilote vos boutiques à distance. 100% hors-ligne. Idéal commerces au Mali et zone UEMOA.">
@@ -50,7 +50,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.3">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.4">
 
   <!-- Structured Data / JSON-LD (Schema.org) -->
   <script type="application/ld+json">
@@ -193,40 +193,47 @@
   </div>
 
   <!-- ═══ NAV ═══ -->
-  <nav class="nav">
+  <nav class="nav" aria-label="Navigation principale">
     <div class="container nav-inner">
       <a href="#hero" class="nav-logo">
         <img src="assets/img/Icone_Droite/icone_droite.svg" alt="MalCom Logo" width="34" height="34">
         <span class="nav-logo-text">MalCom<span class="nav-pro">PRO</span></span>
       </a>
 
-      <div class="nav-links">
-        <a href="#hero" class="nav-link active">Accueil</a>
-        <a href="#avantages" class="nav-link">Pourquoi MalCom</a>
-        <a href="#modules" class="nav-link">Modules</a>
-        <a href="#materiel" class="nav-link">Matériel</a>
-        <a href="#simulateur" class="nav-link">Simulateur</a>
-        <a href="#tarifs" class="nav-link">Tarifs</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-      </div>
-
       <div class="nav-right">
         <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20je%20souhaite%20une%20demonstration%20de%20MalCom"
-          target="_blank" class="btn btn-wa btn-sm">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm nav-cta-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path
               d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z" />
           </svg>
           WhatsApp
         </a>
-        <a href="#contact" class="btn btn-accent btn-sm js-open-install">Installer MalCom</a>
-        <button class="mobile-toggle" aria-label="Menu Mobile">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="#contact" class="btn btn-accent btn-sm js-open-install nav-cta-install">Installer MalCom</a>
+        <button type="button" class="mobile-toggle" popovertarget="site-menu" popovertargetaction="toggle"
+          aria-controls="site-menu" aria-expanded="false" aria-label="Menu de navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
             <line x1="3" y1="12" x2="21" y2="12" />
             <line x1="3" y1="6" x2="21" y2="6" />
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
+
+        <div id="site-menu" class="nav-links" popover="auto">
+          <a href="#hero" class="nav-link active" aria-current="page">Accueil</a>
+          <a href="#avantages" class="nav-link">Pourquoi MalCom</a>
+          <a href="#modules" class="nav-link">Modules</a>
+          <a href="#materiel" class="nav-link">Matériel</a>
+          <a href="#simulateur" class="nav-link">Simulateur</a>
+          <a href="#tarifs" class="nav-link">Tarifs</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <div class="nav-mobile-actions">
+            <a href="#contact" class="btn btn-accent btn-sm js-open-install">Installer MalCom</a>
+            <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20je%20souhaite%20une%20demonstration%20de%20MalCom"
+              target="_blank" rel="noopener noreferrer" class="btn btn-wa btn-sm">Discuter sur WhatsApp</a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -1287,7 +1294,7 @@
             <span>MalCom fonctionne-t-il réellement sans connexion Internet ?</span>
             <span class="faq-arrow">&#9660;</span>
           </button>
-          <div class="faq-a" style="max-height:140px;">
+          <div class="faq-a">
             <p><strong>Oui, à 100%.</strong> Vos données sont stockées directement sur votre ordinateur local.
               L'encaissement, la gestion de stock et l'impression des tickets continuent sans aucune interruption. En mode
               multi-boutiques, la synchronisation réseau s'effectue automatiquement dès que la connexion est rétablie.</p>
@@ -1556,7 +1563,7 @@
             <label class="form-label">Ville / Quartier</label>
             <input type="text" name="client_city" class="form-input" placeholder="Ex: Bamako, Grand Marché" required>
           </div>
-          <div style="display:flex;gap:12px;margin-top:20px;">
+          <div class="modal-actions-row">
             <button type="submit" class="btn btn-wa" style="flex:1;">Envoyer par WhatsApp</button>
             <a href="tel:+22382200766" class="btn btn-accent" style="flex:1;">Appeler direct</a>
           </div>
@@ -1582,25 +1589,23 @@
         </p>
 
         <!-- Edition Switcher Tabs inside Modal -->
-        <div style="display:flex;gap:8px;background:var(--bg-page);padding:5px;border-radius:10px;border:1px solid var(--border);margin-bottom:16px;">
-          <button type="button" class="js-dl-edition-btn active" data-edition="standalone"
-            style="flex:1;padding:9px 12px;border-radius:7px;border:none;font-size:12.5px;font-weight:800;cursor:pointer;background:var(--brand);color:#fff;transition:all 0.2s;">
+        <div class="dl-edition-tabs">
+          <button type="button" class="js-dl-edition-btn active" data-edition="standalone">
             Édition Autonome (100% Hors-Ligne)
           </button>
-          <button type="button" class="js-dl-edition-btn" data-edition="cloud"
-            style="flex:1;padding:9px 12px;border-radius:7px;border:none;font-size:12.5px;font-weight:800;cursor:pointer;background:transparent;color:var(--text-muted);transition:all 0.2s;">
+          <button type="button" class="js-dl-edition-btn" data-edition="cloud">
             Édition Cloud (Multi-Boutiques)
           </button>
         </div>
 
         <!-- PANEL 1 : STANDALONE (100% HORS-LIGNE) -->
         <div id="dl-panel-standalone" class="js-dl-panel">
-          <div style="font-size:12px;color:#065f46;background:#ecfdf5;border:1px solid #a7f3d0;padding:11px 14px;border-radius:10px;margin-bottom:14px;line-height:1.5;">
+          <div class="dl-demo-banner">
             <div style="font-weight:800;margin-bottom:4px;font-size:12.5px;">✓ Version d'Essai Gratuite 30 Jours (Base SQLite &amp; SYSCOHADA inclus)</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;background:rgba(255,255,255,0.85);padding:8px 10px;border-radius:7px;border:1px solid #a7f3d0;color:#0f172a;font-size:11.5px;">
+            <div class="dl-demo-creds">
               <div><strong>Email :</strong> <code style="font-family:var(--font-mono);color:#4f46e5;font-weight:700;">admin@malcom.local</code></div>
               <div><strong>Mot de passe :</strong> <code style="font-family:var(--font-mono);color:#4f46e5;font-weight:700;">admin1234</code></div>
-              <div style="grid-column:span 2;padding-top:4px;border-top:1px dashed #cbd5e1;">
+              <div class="dl-demo-key">
                 <strong>Clé d'activation Démo (30 jours) :</strong> <code style="font-family:var(--font-mono);color:#059669;font-weight:800;">MC-DEMO-30JOURS-2026</code>
               </div>
             </div>
@@ -1704,10 +1709,10 @@
           </a>
         </div>
 
-        <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-muted);">
+        <div class="dl-modal-foot">
           <span>Besoin d'aide pour l'installation ?</span>
           <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service,%20j'ai%20telecharge%20MalCom%20et%20je%20souhaite%20une%20assistance"
-            target="_blank" class="js-dl-wa-help" style="color:var(--brand);font-weight:700;text-decoration:none;">
+            target="_blank" rel="noopener noreferrer" class="js-dl-wa-help" style="color:var(--brand);font-weight:700;text-decoration:none;">
             Assistance WhatsApp &rarr;
           </a>
         </div>
@@ -1725,7 +1730,7 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=2.3"></script>
+  <script src="assets/js/main.js?v=2.4"></script>
 </body>
 
 </html>

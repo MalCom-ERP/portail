@@ -74,26 +74,46 @@ function initTabs() {
 function initFaq() {
   const items = document.querySelectorAll('.faq-item');
 
+  const syncActiveHeights = () => {
+    items.forEach(item => {
+      const answer = item.querySelector('.faq-a');
+      if (!answer) return;
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + 32 + 'px';
+      } else {
+        answer.style.maxHeight = null;
+      }
+    });
+  };
+
   items.forEach(item => {
     const btn = item.querySelector('.faq-q');
     const answer = item.querySelector('.faq-a');
     if (!btn || !answer) return;
+
+    btn.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
 
     btn.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
 
       items.forEach(other => {
         other.classList.remove('active');
+        const ob = other.querySelector('.faq-q');
+        if (ob) ob.setAttribute('aria-expanded', 'false');
         const a = other.querySelector('.faq-a');
         if (a) a.style.maxHeight = null;
       });
 
       if (!isActive) {
         item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
         answer.style.maxHeight = answer.scrollHeight + 32 + 'px';
       }
     });
   });
+
+  syncActiveHeights();
+  window.addEventListener('resize', syncActiveHeights, { passive: true });
 }
 
 /* ─────────── 4. INTERACTIVE ROI CALCULATOR ─────────── */
@@ -350,43 +370,108 @@ function initForms() {
   });
 }
 
-/* ─────────── 8. MOBILE MENU ─────────── */
+/* ─────────── 8. RESPONSIVE NAVIGATION & POPOVER MENU ─────────── */
 function initMobileMenu() {
+  const nav = document.querySelector('.nav');
+  const inner = document.querySelector('.nav-inner');
   const btn = document.querySelector('.mobile-toggle');
-  const links = document.querySelector('.nav-links');
-  if (!btn || !links) return;
+  const menu = document.getElementById('site-menu') || document.querySelector('.nav-links');
+  if (!nav || !inner || !btn || !menu) return;
 
-  btn.addEventListener('click', () => {
-    const isVisible = links.classList.contains('mobile-open');
-    if (isVisible) {
-      links.classList.remove('mobile-open');
-      links.style.display = 'none';
+  // MANDATORY: Feature detect 'popover' on HTMLElement.prototype before loading polyfill.
+  if (!Object.hasOwn(HTMLElement.prototype, 'popover')) {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/@oddbird/popover-polyfill@latest/dist/popover.min.js';
+    script.async = true;
+    document.head.appendChild(script);
+  }
+
+  let lastCollapsedWidth = 0;
+
+  const isMenuOpen = () => {
+    try {
+      return menu.matches(':popover-open') || menu.classList.contains(':popover-open') || menu.classList.contains('mobile-open');
+    } catch (_) {
+      return menu.classList.contains(':popover-open') || menu.classList.contains('mobile-open');
+    }
+  };
+
+  const closeMenu = () => {
+    if (typeof menu.hidePopover === 'function' && menu.hasAttribute('popover')) {
+      try { menu.hidePopover(); } catch (_) { /* ignore */ }
+    }
+    menu.classList.remove('mobile-open');
+    btn.setAttribute('aria-expanded', 'false');
+  };
+
+  const syncLayout = () => {
+    const currentWidth = inner.clientWidth;
+    const currentlyWide = nav.classList.contains('is-wide');
+    if (!currentlyWide && currentWidth <= lastCollapsedWidth && lastCollapsedWidth > 0) {
+      return;
+    }
+
+    const wasOpen = !currentlyWide && isMenuOpen();
+
+    nav.classList.add('is-measuring');
+    nav.classList.add('is-wide');
+    menu.removeAttribute('popover');
+
+    const fitsInline = inner.scrollWidth <= inner.clientWidth + 1 && window.innerWidth > 960;
+
+    if (fitsInline) {
+      nav.classList.add('is-wide');
+      menu.removeAttribute('popover');
+      menu.classList.remove('mobile-open');
+      btn.setAttribute('aria-expanded', 'false');
+      lastCollapsedWidth = 0;
     } else {
-      links.classList.add('mobile-open');
-      links.style.display = 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '72px';
-      links.style.left = '0';
-      links.style.right = '0';
-      links.style.background = 'rgba(10, 13, 24, 0.98)';
-      links.style.backdropFilter = 'blur(20px)';
-      links.style.padding = '24px 28px';
-      links.style.borderBottom = '1px solid var(--border)';
-      links.style.boxShadow = '0 25px 60px rgba(0,0,0,0.8)';
-      links.style.gap = '18px';
-      links.style.zIndex = '100';
+      nav.classList.remove('is-wide');
+      menu.setAttribute('popover', 'auto');
+      lastCollapsedWidth = currentWidth;
+      if (wasOpen) {
+        if (typeof menu.showPopover === 'function') {
+          try { menu.showPopover(); } catch (_) { menu.classList.add('mobile-open'); }
+        } else {
+          menu.classList.add('mobile-open');
+        }
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    requestAnimationFrame(() => nav.classList.remove('is-measuring'));
+  };
+
+  menu.addEventListener('toggle', (e) => {
+    const open = e.newState === 'open';
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Fallback toggle if browser does not yet have native popover or polyfill loaded
+  btn.addEventListener('click', () => {
+    if (!Object.hasOwn(HTMLElement.prototype, 'popover') && typeof menu.showPopover !== 'function') {
+      const open = menu.classList.toggle('mobile-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
   });
 
-  links.querySelectorAll('a').forEach(a => {
+  menu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        links.classList.remove('mobile-open');
-        links.style.display = 'none';
+      if (!nav.classList.contains('is-wide')) {
+        closeMenu();
       }
     });
   });
+
+  if (typeof ResizeObserver === 'function') {
+    const ro = new ResizeObserver(() => syncLayout());
+    ro.observe(inner);
+    ro.observe(menu);
+  } else {
+    window.addEventListener('resize', syncLayout, { passive: true });
+  }
+
+  syncLayout();
 }
 
 /* ─────────── 9. ACTIVE NAV ON SCROLL ─────────── */
@@ -406,8 +491,13 @@ function initScrollNav() {
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      const isCurrent = link.getAttribute('href') === `#${current}`;
+      link.classList.toggle('active', isCurrent);
+      if (isCurrent) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
     });
   }, { passive: true });
 }
