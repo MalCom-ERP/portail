@@ -505,7 +505,7 @@ function initScrollNav() {
 /* ─────────── 10. DYNAMIC SERVER DOWNLOADS ─────────── */
 const UPDATES_API_BASE = 'https://admin.malcom-lgc.com/api/app-updates';
 const DOWNLOAD_EDITIONS = ['pro', 'cloud'];
-const DOWNLOAD_PLATFORMS = ['windows', 'macos-arm64', 'macos-intel'];
+const DOWNLOAD_PLATFORMS = ['windows', 'macos-arm64', 'macos-intel', 'android'];
 const CATALOG_REFRESH_TTL_MS = 15000;
 
 let activeCatalogPromise = null;
@@ -636,7 +636,7 @@ async function fetchCatalogViaCheckFallback() {
       const encoded = encodeURIComponent(filename);
       const ext = filename.includes('.')
         ? filename.split('.').pop().toLowerCase()
-        : (platform === 'windows' ? 'exe' : 'dmg');
+        : (platform === 'windows' ? 'exe' : (platform === 'android' ? 'apk' : 'dmg'));
 
       editions[edition].platforms[platform] = {
         available: true,
@@ -786,7 +786,7 @@ function applyDownloadCatalog(catalog) {
         el.removeAttribute('download');
       }
 
-      const rawExt = item.extension || (item.filename.includes('.') ? item.filename.split('.').pop() : (platform === 'windows' ? 'exe' : 'dmg'));
+      const rawExt = item.extension || (item.filename.includes('.') ? item.filename.split('.').pop() : (platform === 'windows' ? 'exe' : (platform === 'android' ? 'apk' : 'dmg')));
       const ext = String(rawExt).toLowerCase().replace(/^\./, '');
 
       if (btnLabelEl) {
@@ -813,7 +813,7 @@ function applyDownloadCatalog(catalog) {
       }
 
       if (descEl) {
-        const fallbackExt = platform === 'windows' ? 'exe' : 'dmg';
+        const fallbackExt = platform === 'windows' ? 'exe' : (platform === 'android' ? 'apk' : 'dmg');
         descEl.textContent = prefixBase + ' .' + fallbackExt + ' • ' + (osLabel ? osLabel + ' ' : '') + '(non disponible actuellement)';
       }
     }
