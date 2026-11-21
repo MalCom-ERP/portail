@@ -50,7 +50,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.4">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.5">
 
   <!-- Structured Data / JSON-LD (Schema.org) -->
   <script type="application/ld+json">
@@ -85,7 +85,8 @@
         "offers": {
           "@type": "Offer",
           "priceCurrency": "XOF",
-          "price": "15000",
+          "price": "250000",
+          "description": "Licence annuelle MalCom (Version Locale ou Cloud) à 250 000 FCFA / an en paiement comptant, ou en 2 tranches de 150 000 FCFA. Tarifs sur discussion pour entrepôts, gros magasins et personnalisation.",
           "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
           "seller": {
@@ -1122,95 +1123,202 @@
   <section class="section section-divider" id="tarifs">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-tag">Offres Claires</span>
-        <h2 class="section-title">Un investissement amorti en moins de 15 jours</h2>
-        <p class="section-desc">Tarification transparente en Francs CFA. Sans frais cachés, incluant l'installation sur
-          site par notre technicien et la formation de vos caissiers.</p>
+        <span class="section-tag">Offres &amp; Tarifs</span>
+        <h2 class="section-title">Des formules adaptées à la taille de votre activité</h2>
+        <p class="section-desc">Tarification annuelle transparente en Francs CFA pour les boutiques et commerces, et
+          solutions négociées directement avec le propriétaire pour les entrepôts, gros magasins et projets sur-mesure.</p>
       </div>
 
       <div class="pricing-grid">
-        <!-- Plan 1 -->
-        <div class="price-card reveal">
-          <h3 class="price-plan">Formule Mensuelle</h3>
-          <p class="price-desc">Idéal pour démarrer en toute liberté sans engagement de durée.</p>
-          <div>
-            <span class="price-num">15 000</span>
-            <span class="price-curr">FCFA</span>
-            <span class="price-period">/ mois par boutique</span>
+        <!-- Plan 1 : Boutiques & Commerces (Featured) -->
+        <article class="price-card price-featured reveal">
+          <header class="price-card-head">
+            <span class="price-badge">Local ou Cloud</span>
+            <h3 class="price-plan">Boutiques &amp; Commerces</h3>
+            <p class="price-desc">Licence annuelle complète au choix en <strong>Version Locale</strong> (100% hors-ligne)
+              ou <strong>Version Cloud</strong> (Web, PC, Mac &amp; Android).</p>
+          </header>
+
+          <div class="price-card-body">
+            <div class="price-amount-block">
+              <div class="price-amount-row">
+                <span class="price-num">250 000</span>
+                <span class="price-curr">FCFA</span>
+              </div>
+              <span class="price-period">/ an &bull; paiement comptant en 1 fois</span>
+              <div class="price-split-note">
+                <strong>Paiement en 2 tranches possible :</strong> 150 000 FCFA &times; 2 (300 000 FCFA / an).
+                Économisez <strong>50 000 FCFA</strong> en réglant tout d'un coup.
+              </div>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Choix libre : Version Locale (hors-ligne) ou Version Cloud</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Tous les modules inclus (caisse POS, stocks, crédits, fournisseurs, rapports &amp; facturation UEMOA)</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Installation sur site, paramétrage matériel &amp; formation de l'équipe offerts</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Importation de votre catalogue Excel/CSV par AMD-Service</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Mises à jour incluses &amp; support technique 6j/7 par téléphone et WhatsApp</span>
+              </li>
+            </ul>
           </div>
 
-          <ul class="price-features">
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Logiciel MalCom Pro complet (tous modules inclus)
-            </li>
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Installation sur site à Bamako &amp; paramétrage matériel
-            </li>
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Formation complète de votre équipe offerte
-            </li>
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Support technique 6j/7 par téléphone et WhatsApp
-            </li>
-          </ul>
+          <footer class="price-card-foot">
+            <a href="#contact" class="btn btn-accent js-open-install" style="width:100%;">Souscrire — 250 000 FCFA / an</a>
+          </footer>
+        </article>
 
-          <a href="#contact" class="btn btn-outline js-open-install" style="width:100%;">Choisir la formule mensuelle</a>
-        </div>
+        <!-- Plan 2 : Entrepôts & Gros Magasins -->
+        <article class="price-card reveal reveal-delay-1">
+          <header class="price-card-head">
+            <span class="price-badge price-badge-neutral">Multi-Dépôts &amp; Gros Volumes</span>
+            <h3 class="price-plan">Entrepôts &amp; Gros Magasins</h3>
+            <p class="price-desc">Conçu pour les grossistes, dépôts de grande capacité, réseaux multi-magasins et
+              structures à fort volume d'opérations.</p>
+          </header>
 
-        <!-- Plan 2 (Featured) -->
-        <div class="price-card price-featured reveal reveal-delay-1">
-          <span class="price-badge">2 Mois Offerts</span>
-          <h3 class="price-plan">Formule Annuelle</h3>
-          <p class="price-desc">La formule recommandée pour sécuriser l'activité sur l'année avec assistance prioritaire.
-          </p>
-          <div>
-            <span class="price-num">150 000</span>
-            <span class="price-curr">FCFA</span>
-            <span class="price-period">/ an (soit 12 500 FCFA / mois)</span>
+          <div class="price-card-body">
+            <div class="price-amount-block">
+              <div class="price-amount-row">
+                <span class="price-num price-num-custom">À discuter</span>
+              </div>
+              <span class="price-period">Tarif négocié directement avec le propriétaire</span>
+              <div class="price-split-note price-split-note-muted">
+                Établi d'un commun accord selon le nombre d'entrepôts, de magasins, de postes caisses et le volume de
+                stock à piloter.
+              </div>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Gestion multi-entrepôts, réceptions conteneurs &amp; transferts inter-sites</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Postes caisses, magasiniers &amp; superviseurs adaptés à votre organisation</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Tarifs gros / demi-gros / détail, frais d'approche (611) &amp; comptabilité SYSCOHADA</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Déploiement serveur local dédié ou Cloud haute disponibilité</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Accompagnement sur site, audit stock initial &amp; support prioritaire (SLA)</span>
+              </li>
+            </ul>
           </div>
 
-          <ul class="price-features">
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <strong>Tous les avantages de la formule mensuelle</strong>
-            </li>
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Économie immédiate de 30 000 FCFA
-            </li>
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Importation complète de votre catalogue Excel par AMD-Service
-            </li>
-            <li class="price-feature">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Assistance technique prioritaire VIP &amp; interventions gratuites
-            </li>
-          </ul>
+          <footer class="price-card-foot">
+            <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service%2C%20je%20dirige%20un%20entrep%C3%B4t%20ou%20un%20gros%20magasin%20et%20je%20souhaite%20discuter%20d%27une%20offre%20MalCom%20adapt%C3%A9e."
+              target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;">Discuter avec AMD-Service</a>
+          </footer>
+        </article>
 
-          <a href="#contact" class="btn btn-accent js-open-install" style="width:100%;">Profiter de l'offre annuelle</a>
-        </div>
+        <!-- Plan 3 : Personnalisation & Grandes Entreprises -->
+        <article class="price-card reveal reveal-delay-2">
+          <header class="price-card-head">
+            <span class="price-badge price-badge-dark">Sur-Mesure &amp; Entreprises</span>
+            <h3 class="price-plan">Personnalisation de l'Application</h3>
+            <p class="price-desc">Adaptation fonctionnelle, technique et visuelle de MalCom aux exigences spécifiques de
+              votre entreprise.</p>
+          </header>
+
+          <div class="price-card-body">
+            <div class="price-amount-block">
+              <div class="price-amount-row">
+                <span class="price-num price-num-custom">Sur devis</span>
+              </div>
+              <span class="price-period">Étude &amp; cahier des charges personnalisé</span>
+              <div class="price-split-note price-split-note-muted">
+                Tarif défini après échange avec le propriétaire ou la direction selon les modules et développements
+                spécifiques souhaités.
+              </div>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Développement de nouveaux modules métier dédiés à votre activité</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Personnalisation des factures, rapports, tableaux de bord &amp; validations</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Habillage à l'identité visuelle (logo, couleurs, documents officiels)</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Intégration API / exports vers vos outils comptables ou ERP existants</span>
+              </li>
+              <li class="price-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Contrat cadre entreprise, formation avancée &amp; interlocuteur dédié</span>
+              </li>
+            </ul>
+          </div>
+
+          <footer class="price-card-foot">
+            <a href="https://wa.me/22382200766?text=Bonjour%20AMD-Service%2C%20je%20souhaite%20demander%20une%20%C3%A9tude%20pour%20la%20personnalisation%20de%20l%27application%20MalCom."
+              target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;">Demander une étude sur-mesure</a>
+          </footer>
+        </article>
       </div>
+
+      <p class="pricing-footnote reveal">
+        Chaque déploiement fait l'objet d'un contrat officiel détaillé (Version Locale, Version Cloud ou Contrat Grandes
+        Entreprises &amp; Personnalisation). Besoin d'un devis rapide ? Appelez le
+        <a href="tel:+22382200766">+223 82 20 07 66</a>.
+      </p>
     </div>
   </section>
 
